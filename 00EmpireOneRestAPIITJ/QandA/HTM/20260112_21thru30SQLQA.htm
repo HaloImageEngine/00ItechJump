@@ -1,0 +1,122 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+code
+	{font-family:"Courier New";}
+.MsoChpDefault
+	{font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p><strong>21) What is a schema in SQL Server?</strong><br>
+A schema is a logical container that groups database objects such as tables,
+views, and stored procedures. It helps organize objects, avoid name conflicts,
+and control security. For example, two tables can have the same name if they
+are in different schemas.</p>
+
+<p><strong>22) What is the difference between a heap and a clustered table?</strong><br>
+A heap is a table without a clustered index, meaning data is stored in no
+particular order. A clustered table has a clustered index, which defines the
+physical order of the data. Queries that use range searches or sorted data
+generally perform better on clustered tables.</p>
+
+<p><strong>23) What is a SQL Server index fragmentation?</strong><br>
+Fragmentation occurs when the logical order of index pages does not match the
+physical order on disk. This can slow down query performance. SQL Server
+provides index reorganize and rebuild operations to reduce fragmentation and
+improve performance.</p>
+
+<p><strong>24) What is a parameterized query?</strong><br>
+A parameterized query uses parameters instead of hard-coded values in SQL
+statements. This improves performance by allowing query plan reuse and also
+helps protect against SQL injection attacks.</p>
+
+<p><strong>25) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>UNION</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>UNION ALL</span></b></code><strong>?</strong><br>
+<code><span style='font-size:10.0pt'>UNION</span></code> combines the results
+of two queries and removes duplicate rows. <code><span style='font-size:10.0pt'>UNION
+ALL</span></code> combines results but keeps all rows, including duplicates. <code><span
+style='font-size:10.0pt'>UNION ALL</span></code> is faster because it does not
+perform duplicate elimination.</p>
+
+<p><strong>26) What is a surrogate key?</strong><br>
+A surrogate key is an artificial primary key, usually an identity column or
+GUID, that has no business meaning. It is used to uniquely identify rows when
+natural keys are too large or complex.</p>
+
+<p><strong>27) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>CHAR</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>VARCHAR</span></b></code><strong>?</strong><br>
+<code><span style='font-size:10.0pt'>CHAR</span></code> is a fixed-length data
+type and always uses the same amount of storage. <code><span style='font-size:
+10.0pt'>VARCHAR</span></code> is variable-length and uses only as much space as
+needed. <code><span style='font-size:10.0pt'>VARCHAR</span></code> is more
+space-efficient when storing data of varying lengths.</p>
+
+<p><strong>28) What is the purpose of the </strong><code><b><span
+style='font-size:10.0pt'>MERGE</span></b></code><strong> statement?</strong><br>
+The <code><span style='font-size:10.0pt'>MERGE</span></code> statement allows
+you to insert, update, or delete rows in a target table based on a comparison
+with a source table. It is commonly used for synchronization and data loading
+operations.</p>
+
+<p><strong>29) What is tempdb and why is it important?</strong><br>
+<code><span style='font-size:10.0pt'>tempdb</span></code> is a system database
+used to store temporary objects, intermediate query results, and versioned
+rows. Many SQL Server operations rely on <code><span style='font-size:10.0pt'>tempdb</span></code>,
+so its performance and configuration have a major impact on overall database
+performance.</p>
+
+<p><strong>30) What is a correlated subquery?</strong><br>
+A correlated subquery is a subquery that depends on values from the outer
+query. It runs once for each row processed by the outer query. While powerful,
+correlated subqueries can be slow and should be used carefully in large
+datasets.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+code
+	{font-family:"Courier New";}
+.MsoChpDefault
+	{font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p><strong>11) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>useEffect</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>useLayoutEffect</span></b></code><strong> in React?</strong><br>
+Both <code><span style='font-size:10.0pt'>useEffect</span></code> and <code><span
+style='font-size:10.0pt'>useLayoutEffect</span></code> allow you to perform
+side effects in functional components, but they differ in timing. <code><span
+style='font-size:10.0pt'>useEffect</span></code> runs asynchronously after the
+DOM has been painted, making it suitable for tasks like fetching data. <code><span
+style='font-size:10.0pt'>useLayoutEffect</span></code> runs synchronously after
+the DOM updates but before the browser paints, making it useful for measuring
+or manipulating the layout to avoid flicker.</p>
+
+<p><strong>12) What is a key in React and why is it important?</strong><br>
+A key is a unique identifier assigned to elements in a list to help React
+identify which items have changed, been added, or removed. Using keys improves
+performance by minimizing DOM manipulations and ensuring that components
+maintain their state correctly during re-renders. Without keys, React may
+re-render unnecessarily or mix up component states.</p>
+
+<p><strong>13) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>React.PureComponent</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>React.Component</span></b></code><strong>?</strong><br>
+<code><span style='font-size:10.0pt'>React.Component</span></code> re-renders
+whenever its parent re-renders, regardless of whether props or state have
+changed. <code><span style='font-size:10.0pt'>React.PureComponent</span></code>
+implements a shallow comparison of props and state, preventing re-renders when
+nothing has changed. PureComponent helps improve performance but should be used
+only when shallow comparison is sufficient.</p>
+
+<p><strong>14) What is lazy loading in React?</strong><br>
+Lazy loading is a technique to defer the loading of components until they are
+needed. In React, it is implemented using <code><span style='font-size:10.0pt'>React.lazy()</span></code>
+and <code><span style='font-size:10.0pt'>Suspense</span></code>. This reduces
+the initial bundle size and improves application performance by only loading
+code when a component is rendered.</p>
+
+<p><strong>15) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>React.Fragment</span></b></code><strong> and a </strong><code><b><span
+style='font-size:10.0pt'>&lt;div&gt;</span></b></code><strong>?</strong><br>
+<code><span style='font-size:10.0pt'>React.Fragment</span></code> allows you to
+group multiple elements without adding extra nodes to the DOM, unlike a <code><span
+style='font-size:10.0pt'>&lt;div&gt;</span></code> which creates a new DOM
+element. Using fragments helps maintain cleaner HTML and avoids unnecessary
+wrappers, which is especially useful in lists and nested components.</p>
+
+<p><strong>16) What is reconciliation in React?</strong><br>
+Reconciliation is the process by which React updates the DOM efficiently. When
+a component’s state or props change, React compares the new virtual DOM with
+the previous version (diffing) and calculates the minimum set of changes
+required to update the real DOM. This ensures optimal performance and minimal
+re-rendering.</p>
+
+<p><strong>17) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>React.StrictMode</span></b></code><strong> and normal
+rendering?</strong><br>
+<code><span style='font-size:10.0pt'>React.StrictMode</span></code> is a tool
+used during development to highlight potential problems in an application. It
+runs certain lifecycle methods and hooks twice to detect side effects and warns
+about deprecated APIs. It does not affect production rendering but helps
+developers write more robust code.</p>
+
+<p><strong>18) What is a Higher-Order Component (HOC) in React?</strong><br>
+A Higher-Order Component is a function that takes a component and returns a new
+component with added functionality. HOCs are used for cross-cutting concerns
+like authentication, logging, or theme injection without modifying the original
+component, promoting code reuse and separation of concerns.</p>
+
+<p><strong>19) What is the difference between server-side rendering (SSR) and
+client-side rendering (CSR) in React?</strong><br>
+Client-side rendering loads a minimal HTML page and renders content in the
+browser using JavaScript, which can delay the time to first meaningful paint.
+Server-side rendering generates HTML on the server and sends it to the browser,
+improving performance and SEO. Frameworks like Next.js provide SSR support for
+React.</p>
+
+<p><strong>20) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>useCallback</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>useMemo</span></b></code><strong>?</strong><br>
+<code><span style='font-size:10.0pt'>useCallback</span></code> memoizes a
+function, returning the same function instance between renders unless
+dependencies change. <code><span style='font-size:10.0pt'>useMemo</span></code>
+memoizes the result of a computation, recomputing it only when dependencies
+change. Both hooks help optimize performance by preventing unnecessary
+re-renders and recalculations.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

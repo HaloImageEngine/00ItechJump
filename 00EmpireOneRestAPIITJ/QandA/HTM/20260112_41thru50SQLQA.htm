@@ -1,0 +1,146 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+code
+	{font-family:"Courier New";}
+.MsoChpDefault
+	{font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p><strong>41) What is a SQL Server login versus a database user?</strong><br>
+A SQL Server login provides access to the SQL Server instance, allowing
+authentication at the server level. A database user, on the other hand, is
+mapped to a login and provides access to a specific database. While a login
+allows a connection to the server, permissions inside a database are controlled
+through the associated database user.</p>
+
+<p><strong>42) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>CHAR</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>NCHAR</span></b></code><strong>, and </strong><code><b><span
+style='font-size:10.0pt'>VARCHAR</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>NVARCHAR</span></b></code><strong>?</strong><br>
+<code><span style='font-size:10.0pt'>CHAR</span></code> and <code><span
+style='font-size:10.0pt'>VARCHAR</span></code> store non-Unicode data, while <code><span
+style='font-size:10.0pt'>NCHAR</span></code> and <code><span style='font-size:
+10.0pt'>NVARCHAR</span></code> store Unicode data. Unicode data can store
+multilingual characters and takes twice the storage per character compared to
+non-Unicode. <code><span style='font-size:10.0pt'>CHAR</span></code> and <code><span
+style='font-size:10.0pt'>NCHAR</span></code> are fixed-length, while <code><span
+style='font-size:10.0pt'>VARCHAR</span></code> and <code><span
+style='font-size:10.0pt'>NVARCHAR</span></code> are variable-length, making
+them more space-efficient for variable-length data.</p>
+
+<p><strong>43) What is a SQL Server deadlock and how can it be prevented?</strong><br>
+A deadlock occurs when two or more transactions block each other, each waiting
+for a resource the other holds. SQL Server detects deadlocks automatically and
+terminates one transaction as a deadlock victim. Deadlocks can be prevented by
+keeping transactions short, accessing tables in the same order, using proper
+indexing, and avoiding long-running locks.</p>
+
+<p><strong>44) What is SQL Server transaction log and why is it important?</strong><br>
+The transaction log records all changes made to the database, ensuring
+durability and consistency. It allows SQL Server to roll back incomplete
+transactions and recover the database in case of failure. Proper management of
+transaction logs is critical to prevent them from growing too large and to
+maintain database performance.</p>
+
+<p><strong>45) What is a SQL Server constraint?</strong><br>
+A constraint is a rule applied to table columns to enforce data integrity.
+Common constraints include <code><span style='font-size:10.0pt'>PRIMARY KEY</span></code>,
+<code><span style='font-size:10.0pt'>FOREIGN KEY</span></code>, <code><span
+style='font-size:10.0pt'>UNIQUE</span></code>, <code><span style='font-size:
+10.0pt'>CHECK</span></code>, and <code><span style='font-size:10.0pt'>DEFAULT</span></code>.
+Constraints ensure that data entered into the table meets the business and
+relational rules defined for the database.</p>
+
+<p><strong>46) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>DELETE</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>TRUNCATE</span></b></code><strong> in SQL Server?</strong><br>
+<code><span style='font-size:10.0pt'>DELETE</span></code> removes specific rows
+based on a condition and can be rolled back if within a transaction. It also
+fires triggers. <code><span style='font-size:10.0pt'>TRUNCATE</span></code>
+removes all rows from a table quickly, resets identity columns, and cannot be
+rolled back unless in a transaction. <code><span style='font-size:10.0pt'>TRUNCATE</span></code>
+does not fire triggers.</p>
+
+<p><strong>47) What is SQL Server indexing and what types are available?</strong><br>
+Indexing improves query performance by allowing faster retrieval of data. Types
+of indexes include clustered, non-clustered, unique, filtered, columnstore, and
+full-text indexes. Choosing the right index type depends on query patterns and
+table structure.</p>
+
+<p><strong>48) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>INNER JOIN</span></b></code><strong>, </strong><code><b><span
+style='font-size:10.0pt'>LEFT JOIN</span></b></code><strong>, </strong><code><b><span
+style='font-size:10.0pt'>RIGHT JOIN</span></b></code><strong>, and </strong><code><b><span
+style='font-size:10.0pt'>FULL OUTER JOIN</span></b></code><strong>?</strong><br>
+<code><span style='font-size:10.0pt'>INNER JOIN</span></code> returns only
+matching rows from both tables. <code><span style='font-size:10.0pt'>LEFT JOIN</span></code>
+returns all rows from the left table and matching rows from the right table,
+filling with NULLs if no match exists. <code><span style='font-size:10.0pt'>RIGHT
+JOIN</span></code> returns all rows from the right table and matching rows from
+the left. <code><span style='font-size:10.0pt'>FULL OUTER JOIN</span></code>
+returns all rows from both tables, with NULLs where matches do not exist.</p>
+
+<p><strong>49) What is a SQL Server trigger?</strong><br>
+A trigger is a special type of stored procedure that automatically executes in
+response to <code><span style='font-size:10.0pt'>INSERT</span></code>, <code><span
+style='font-size:10.0pt'>UPDATE</span></code>, or <code><span style='font-size:
+10.0pt'>DELETE</span></code> operations on a table. Triggers are commonly used
+for auditing, enforcing business rules, and maintaining data integrity across
+related tables.</p>
+
+<p><strong>50) What is SQL Server replication and what types are available?</strong><br>
+Replication copies and distributes data from one database to another to
+maintain consistency. It is commonly used for reporting, load balancing, and
+disaster recovery. Types include snapshot replication, transactional
+replication, and merge replication, each suited for different scenarios of data
+synchronization.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

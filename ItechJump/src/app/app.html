@@ -1,0 +1,28 @@
+<div class="app-root">
+  <!-- Header -->
+  <header class="app-header">
+
+
+    <!-- Nav under logo -->
+    <nav class="app-nav" aria-label="Main navigation">
+      <button mat-button routerLink="/main" routerLinkActive="active">Main</button>
+      <button mat-button routerLink="/add-questions" routerLinkActive="active">Add Questions</button>
+      <button mat-button routerLink="/review-answers" routerLinkActive="active">Review Answers</button>
+      <button mat-button routerLink="/voice-record" routerLinkActive="active">Voice Record</button>
+      <button mat-button routerLink="/summary" routerLinkActive="active">Summary</button>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main class="app-main">
+    <div class="app-main-inner">
+      <!-- 👇 THIS is where MainPageComponent will render -->
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <span>©2025 ITechJump · Tech Interview Simulator</span>
+  </footer>
+</div>

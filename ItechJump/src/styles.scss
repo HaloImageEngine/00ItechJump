@@ -1,0 +1,187 @@
+
+// Include theming for Angular Material with `mat.theme()`.
+// This Sass mixin will define CSS variables that are used for styling Angular Material
+// components according to the Material 3 design spec.
+// Learn more about theming and how to use it for your application's
+// custom components at https://material.angular.dev/guide/theming
+@use '@angular/material' as mat;
+
+html {
+  @include mat.theme((
+    color: (
+      theme-type: dark,
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+html,
+body,
+app-root,
+main.main-page {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Routed page shells */
+.main-page,
+.pc-test-page,
+.success-page,
+.cancel-page,
+.contact-page,
+.about-page,
+.login-page,
+.register-page,
+.logoff-page,
+.subscribe-page,
+.subscribe2-page,
+.subscribe3-page {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+
+  .page-title,
+  .page-title-label,
+  .page-subtitle,
+  .section-title,
+  .feature-title,
+  .plan-title,
+  .logout-message,
+  p,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  label,
+  .mat-mdc-card-title,
+  .mat-mdc-card-subtitle {
+    color: #ffffff !important;
+  }
+}
+
+.main-page .card,
+.about-page .card,
+.logoff-page .card {
+  background-color: #0d0d0d !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.page-title-label {
+  color: #ffffff !important;
+}
+
+.page-subtitle {
+  color: #f5f5f5 !important;
+}
+
+a {
+  color: #9cd6ff;
+}
+
+/* Material inputs on dark pages */
+.mat-mdc-form-field .mat-mdc-text-field-wrapper {
+  background-color: #111111 !important;
+}
+
+.mat-mdc-form-field .mdc-text-field--outlined .mdc-notched-outline__leading,
+.mat-mdc-form-field .mdc-text-field--outlined .mdc-notched-outline__notch,
+.mat-mdc-form-field .mdc-text-field--outlined .mdc-notched-outline__trailing {
+  border-color: rgba(255, 255, 255, 0.45) !important;
+}
+
+.mat-mdc-form-field .mat-mdc-floating-label,
+.mat-mdc-form-field .mat-mdc-input-element,
+.mat-mdc-form-field .mat-mdc-select-value-text,
+.mat-mdc-select-arrow {
+  color: #ffffff !important;
+}
+
+.mat-mdc-card {
+  background-color: #0d0d0d !important;
+  color: #ffffff !important;
+}
+
+textarea.mat-mdc-input-element,
+.main-page textarea,
+.answer-box textarea {
+  background-color: #111111 !important;
+  color: #ffffff !important;
+}
+
+/* ITechJump brand images (public/assets/img) */
+.brand-logo--small {
+  height: 40px;
+  width: auto;
+  max-width: 200px;
+}
+
+.brand-logo--wide {
+  width: min(100%, 380px);
+  height: auto;
+  max-height: 80px;
+}
+
+.brand-logo--rocket {
+  width: auto;
+  height: clamp(56px, 14vw, 96px);
+  max-width: min(100%, 140px);
+}
+
+.page-title--branded {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 4px 0;
+}
+
+.page-title--branded.page-title--row {
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+}
+
+.page-title-label {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.main-hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.page-hero {
+  margin: 0 0 12px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid #1e88e5;
+}
+
+.page-hero .page-title--row {
+  margin: 0;
+  align-items: center;
+}
+
+.page-hero .brand-logo--rocket {
+  height: clamp(44px, 9vw, 68px);
+  max-width: 72px;
+}

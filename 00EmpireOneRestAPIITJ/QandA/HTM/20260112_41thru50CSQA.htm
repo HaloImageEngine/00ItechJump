@@ -1,0 +1,141 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+code
+	{font-family:"Courier New";}
+.MsoChpDefault
+	{font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p><strong>41) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>Task.Run()</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>Task.Factory.StartNew()</span></b></code><strong>?</strong><br>
+<code><span style='font-size:10.0pt'>Task.Run()</span></code> is a simpler and
+safer way to run a task on the thread pool and is recommended for most
+scenarios. <code><span style='font-size:10.0pt'>Task.Factory.StartNew()</span></code>
+is more flexible and allows you to control task creation options, but it is
+easier to misuse and can lead to unexpected behavior. In modern C#
+applications, <code><span style='font-size:10.0pt'>Task.Run()</span></code> is
+generally preferred.</p>
+
+<p><strong>42) What is a value tuple in C#?</strong><br>
+A value tuple allows you to return multiple values from a method in a strongly
+typed way. It is defined using parentheses, such as <code><span
+style='font-size:10.0pt'>(int Id, string Name)</span></code>, and provides
+named fields for better readability. Value tuples are lightweight and commonly
+used instead of creating small data classes.</p>
+
+<p><strong>43) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>ConfigureAwait(true)</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>ConfigureAwait(false)</span></b></code><strong>?</strong><br>
+<code><span style='font-size:10.0pt'>ConfigureAwait(true)</span></code> (the
+default) resumes execution on the original synchronization context, such as the
+UI thread. <code><span style='font-size:10.0pt'>ConfigureAwait(false)</span></code>
+allows the continuation to run on any available thread, which improves
+performance and avoids deadlocks in library and server-side code. In ASP.NET
+Core and backend services, <code><span style='font-size:10.0pt'>ConfigureAwait(false)</span></code>
+is often recommended.</p>
+
+<p><strong>44) What is a POCO class?</strong><br>
+A POCO (Plain Old CLR Object) is a simple class that does not depend on any
+specific framework. It contains only properties and basic logic and is commonly
+used for data models and DTOs. POCO classes improve portability and make code
+easier to test and maintain.</p>
+
+<p><strong>45) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>Include()</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>ThenInclude()</span></b></code><strong> in Entity
+Framework?</strong><br>
+<code><span style='font-size:10.0pt'>Include()</span></code> is used to load
+related data along with the main entity, such as loading an order with its
+customer. <code><span style='font-size:10.0pt'>ThenInclude()</span></code> is
+used to load deeper related data, such as an order’s customer’s address. This
+allows you to eagerly load complex object graphs in a single query.</p>
+
+<p><strong>46) What is the difference between eager loading and lazy loading?</strong><br>
+Eager loading retrieves all required data in a single query, while lazy loading
+retrieves related data only when it is accessed. Eager loading improves
+performance when you know you need related data, while lazy loading can reduce
+initial load time but may cause many extra database queries.</p>
+
+<p><strong>47) What is a memory leak in .NET?</strong><br>
+A memory leak occurs when objects are no longer needed but are still
+referenced, preventing the garbage collector from freeing them. This often
+happens due to event handlers, static references, or long-lived objects holding
+references to short-lived ones. Over time, this can cause increased memory
+usage and application crashes.</p>
+
+<p><strong>48) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>AddTransient</span></b></code><strong>, </strong><code><b><span
+style='font-size:10.0pt'>AddScoped</span></b></code><strong>, and </strong><code><b><span
+style='font-size:10.0pt'>AddSingleton</span></b></code><strong> in dependency
+injection?</strong><br>
+<code><span style='font-size:10.0pt'>AddTransient</span></code> creates a new
+instance every time it is requested. <code><span style='font-size:10.0pt'>AddScoped</span></code>
+creates one instance per request, commonly used in web applications. <code><span
+style='font-size:10.0pt'>AddSingleton</span></code> creates a single instance
+for the entire lifetime of the application. Choosing the correct lifetime is
+important for performance and thread safety.</p>
+
+<p><strong>49) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>await Task.WhenAll()</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>await Task.WhenAny()</span></b></code><strong>?</strong><br>
+<code><span style='font-size:10.0pt'>Task.WhenAll()</span></code> waits for all
+tasks to complete before continuing, while <code><span style='font-size:10.0pt'>Task.WhenAny()</span></code>
+returns as soon as the first task finishes. <code><span style='font-size:10.0pt'>WhenAll</span></code>
+is useful when you need all results, while <code><span style='font-size:10.0pt'>WhenAny</span></code>
+is useful when you only need the first completed result.</p>
+
+<p><strong>50) What is a circular reference?</strong><br>
+A circular reference occurs when two or more objects reference each other,
+directly or indirectly. This can cause issues with serialization and memory
+management if not handled correctly. In design and database models, circular
+references should be carefully managed or avoided.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

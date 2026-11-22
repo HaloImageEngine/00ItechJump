@@ -1,0 +1,708 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+@font-face
+	{font-family:"Segoe UI Emoji";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoChpDefault
+	{font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:13.5pt;
+font-family:"Times New Roman",serif'>Interview-ready explanation</span></b></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>“I
+use </span><span style='font-size:10.0pt;font-family:"Courier New"'>useRef</span><span
+style='font-family:"Times New Roman",serif'> to interact with the DOM directly,
+such as scrolling to the top of the page, without causing re-renders. It’s
+ideal for imperative actions that don’t belong in state.”</span></p>
+
+<div class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+line-height:normal'><span style='font-family:"Times New Roman",serif'>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:18.0pt;
+font-family:"Segoe UI Emoji",sans-serif'>&#129504;</span></b><b><span
+style='font-size:18.0pt;font-family:"Times New Roman",serif'> How These Hooks
+Work Together</span></b></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>This
+component demonstrates <b>correct separation of concerns</b>:</span></p>
+
+<table class=MsoNormalTable border=0 cellpadding=0>
+ <thead>
+  <tr>
+   <td style='padding:.75pt .75pt .75pt .75pt'>
+   <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+   line-height:normal'><b><span style='font-family:"Times New Roman",serif'>Hook</span></b></p>
+   </td>
+   <td style='padding:.75pt .75pt .75pt .75pt'>
+   <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+   line-height:normal'><b><span style='font-family:"Times New Roman",serif'>Responsibility</span></b></p>
+   </td>
+  </tr>
+ </thead>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;font-family:"Courier New"'>useState</span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>User input &amp; UI state</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;font-family:"Courier New"'>useMemo</span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Derived, static data</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;font-family:"Courier New"'>useCallback</span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Stable event handlers</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;font-family:"Courier New"'>useRef</span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>DOM interaction</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>You
+avoid:</span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Overusing
+     memoization</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Storing
+     derived data in state</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Using
+     refs incorrectly</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Triggering
+     unnecessary renders</span></li>
+</ul>
+
+<div class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+line-height:normal'><span style='font-family:"Times New Roman",serif'>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:18.0pt;
+font-family:"Segoe UI Emoji",sans-serif'>&#129514;</span></b><b><span
+style='font-size:18.0pt;font-family:"Times New Roman",serif'> Why This Is
+Interview-Strong Code</span></b></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>This
+component shows you understand:</span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Performance
+     tradeoffs</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>React’s
+     render lifecycle</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Hooks
+     best practices</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Mobile-first
+     UX considerations</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Accessibility
+     (</span><span style='font-size:10.0pt;font-family:"Courier New"'>aria-*</span><span
+     style='font-family:"Times New Roman",serif'>, semantic roles)</span></li>
+</ul>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>An
+interviewer could point to <b>any hook here</b> and you’d have a confident,
+correct explanation.</span></p>
+
+<div class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+line-height:normal'><span style='font-family:"Times New Roman",serif'>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:18.0pt;
+font-family:"Segoe UI Emoji",sans-serif'>&#9989;</span></b><b><span
+style='font-size:18.0pt;font-family:"Times New Roman",serif'> Summary</span></b></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='line-height:normal'><b><span style='font-size:10.0pt;
+     font-family:"Courier New"'>useState</span></b><span style='font-family:
+     "Times New Roman",serif'>: Clean, minimal state driving the entire UI</span></li>
+ <li class=MsoNormal style='line-height:normal'><b><span style='font-size:10.0pt;
+     font-family:"Courier New"'>useMemo</span></b><span style='font-family:
+     "Times New Roman",serif'>: Used correctly for static derived values</span></li>
+ <li class=MsoNormal style='line-height:normal'><b><span style='font-size:10.0pt;
+     font-family:"Courier New"'>useCallback</span></b><span style='font-family:
+     "Times New Roman",serif'>: Applied selectively where stability matters</span></li>
+ <li class=MsoNormal style='line-height:normal'><b><span style='font-size:10.0pt;
+     font-family:"Courier New"'>useRef</span></b><span style='font-family:"Times New Roman",serif'>:
+     Properly used for DOM control without re-renders</span></li>
+</ul>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>If
+you want next, we can:</span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Convert
+     this explanation into an <b>interview paragraph</b></span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Add
+     <b>inline comments</b> to the code</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Identify
+     <b>Next.js compatibility improvements</b></span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Refactor
+     into <b>custom hooks</b> for reuse</span></li>
+</ul>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Just
+tell me the next step.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+style='font-family:"Times New Roman",serif'>what is the term toast?</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>In
+UI / frontend development, the term <b>“toast”</b> refers to a <b>small,
+non-blocking notification message</b> that briefly appears on the screen and
+then disappears automatically.</span></p>
+
+<div class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+line-height:normal'><span style='font-family:"Times New Roman",serif'>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:18.0pt;
+font-family:"Segoe UI Emoji",sans-serif'>&#127838;</span></b><b><span
+style='font-size:18.0pt;font-family:"Times New Roman",serif'> What “Toast”
+Means (Conceptually)</span></b></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>A
+<b>toast notification</b>:</span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Appears
+     temporarily (usually a few seconds)</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Does
+     <b>not interrupt</b> the user’s flow</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Provides
+     <b>feedback</b>, not decisions</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Automatically
+     dismisses itself</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Often
+     appears at the bottom or corner of the screen</span></li>
+</ul>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Think
+of it as:</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>“I’m
+just letting you know this happened.”</span></p>
+
+<div class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+line-height:normal'><span style='font-family:"Times New Roman",serif'>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:18.0pt;
+font-family:"Segoe UI Emoji",sans-serif'>&#128204;</span></b><b><span
+style='font-size:18.0pt;font-family:"Times New Roman",serif'> Common Uses for
+Toasts</span></b></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Toasts
+are used for:</span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Segoe UI Emoji",sans-serif'>&#9989;</span><span
+     style='font-family:"Times New Roman",serif'> Success messages<br>
+     <i>“Saved successfully”</i></span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Segoe UI Emoji",sans-serif'>&#9888;&#65039;</span><span
+     style='font-family:"Times New Roman",serif'> Warnings<br>
+     <i>“You can only select 5 numbers”</i></span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>&#8505;&#65039;
+     Informational feedback<br>
+     <i>“Changes applied”</i></span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Segoe UI Emoji",sans-serif'>&#10060;</span><span
+     style='font-family:"Times New Roman",serif'> Non-fatal errors<br>
+     <i>“Network error — retrying…”</i></span></li>
+</ul>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>They
+are <b>not</b> used for:</span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Confirmations
+     (“Are you sure?”)</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Critical
+     blocking errors</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Long
+     explanations</span></li>
+</ul>
+
+<div class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+line-height:normal'><span style='font-family:"Times New Roman",serif'>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:18.0pt;
+font-family:"Segoe UI Emoji",sans-serif'>&#129504;</span></b><b><span
+style='font-size:18.0pt;font-family:"Times New Roman",serif'> Why It’s Called
+“Toast”</span></b></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>The
+name comes from Android UI patterns:</span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>A
+     toast <b>“pops up” briefly</b></span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Then
+     <b>“disappears on its own”</b></span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Like
+     toast popping out of a toaster </span><span style='font-family:"Segoe UI Emoji",sans-serif'>&#127838;</span></li>
+</ul>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>The
+term was adopted widely across:</span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Web
+     apps</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>React
+     / Angular / Vue</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>iOS
+     &amp; Android UI frameworks</span></li>
+</ul>
+
+<div class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+line-height:normal'><span style='font-family:"Times New Roman",serif'>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:18.0pt;
+font-family:"Segoe UI Emoji",sans-serif'>&#9883;&#65039;</span></b><b><span
+style='font-size:18.0pt;font-family:"Times New Roman",serif'> How “Toast” Is
+Used in Your Code</span></b></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>In
+your component:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+style='font-size:10.0pt;font-family:"Courier New"'>const [toast, setToast] =
+useState(&quot;&quot;);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&lt;Snackbar</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+style='font-size:10.0pt;font-family:"Courier New"'>  open={!!toast}</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+style='font-size:10.0pt;font-family:"Courier New"'>  autoHideDuration={2200}</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+style='font-size:10.0pt;font-family:"Courier New"'>  onClose={() =&gt; setToast(&quot;&quot;)}</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+style='font-size:10.0pt;font-family:"Courier New"'>  message={toast}</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+style='font-size:10.0pt;font-family:"Courier New"'>/&gt;</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Here:</span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt;
+     font-family:"Courier New"'>toast</span><span style='font-family:"Times New Roman",serif'>
+     holds the message text</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Setting
+     </span><span style='font-size:10.0pt;font-family:"Courier New"'>toast</span><span
+     style='font-family:"Times New Roman",serif'> &#8594; shows the Snackbar</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Clearing
+     it &#8594; hides the notification</span></li>
+</ul>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Material
+UI uses </span><b><span style='font-size:10.0pt;font-family:"Courier New"'>Snackbar</span></b><span
+style='font-family:"Times New Roman",serif'>, but the <i>concept</i> is still
+called a <b>toast</b>.</span></p>
+
+<div class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+line-height:normal'><span style='font-family:"Times New Roman",serif'>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:18.0pt;
+font-family:"Segoe UI Emoji",sans-serif'>&#129489;&#8205;&#128188;</span></b><b><span
+style='font-size:18.0pt;font-family:"Times New Roman",serif'> Interview-Ready
+Definition (One Paragraph)</span></b></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>A
+toast is a small, non-blocking notification used to provide brief feedback to
+the user, such as success, warning, or informational messages. Toasts appear
+temporarily and dismiss automatically without interrupting the user’s workflow.
+In React applications, they’re commonly implemented using components like
+Material UI’s Snackbar and controlled through state.</span></p>
+
+<div class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+line-height:normal'><span style='font-family:"Times New Roman",serif'>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:18.0pt;
+font-family:"Segoe UI Emoji",sans-serif'>&#9989;</span></b><b><span
+style='font-size:18.0pt;font-family:"Times New Roman",serif'> Summary</span></b></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='line-height:normal'><b><span style='font-family:
+     "Times New Roman",serif'>Toast</span></b><span style='font-family:"Times New Roman",serif'>
+     = temporary, non-blocking notification</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Used
+     for <b>feedback</b>, not decisions</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Auto-dismissed</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Common
+     across <b>web and mobile apps</b></span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Your
+     usage is <b>correct and idiomatic</b></span></li>
+</ul>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>If
+you want, I can:</span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Compare
+     <b>Toast vs Modal vs Alert</b></span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Show
+     a <b>custom reusable toast hook</b></span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Explain
+     how to centralize toasts in a React app</span></li>
+</ul>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Just
+say the word.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+style='font-family:"Times New Roman",serif'>Give me a one sentence to describe
+the following inports. AppBar, Toolbar, IconButton, Typography, Container, Box,
+Paper, Stack, Chip, Button, Divider, ButtonBase, Snackbar,</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Here’s
+a <b>single, interview-ready sentence</b> that cleanly describes those imports:</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>These
+Material UI components are used to build a responsive, accessible layout and
+user interface, including app-level navigation (</span><span style='font-size:
+10.0pt;font-family:"Courier New"'>AppBar</span><span style='font-family:"Times New Roman",serif'>,
+</span><span style='font-size:10.0pt;font-family:"Courier New"'>Toolbar</span><span
+style='font-family:"Times New Roman",serif'>), layout and spacing (</span><span
+style='font-size:10.0pt;font-family:"Courier New"'>Container</span><span
+style='font-family:"Times New Roman",serif'>, </span><span style='font-size:
+10.0pt;font-family:"Courier New"'>Box</span><span style='font-family:"Times New Roman",serif'>,
+</span><span style='font-size:10.0pt;font-family:"Courier New"'>Paper</span><span
+style='font-family:"Times New Roman",serif'>, </span><span style='font-size:
+10.0pt;font-family:"Courier New"'>Stack</span><span style='font-family:"Times New Roman",serif'>,
+</span><span style='font-size:10.0pt;font-family:"Courier New"'>Divider</span><span
+style='font-family:"Times New Roman",serif'>), interactive elements (</span><span
+style='font-size:10.0pt;font-family:"Courier New"'>Button</span><span
+style='font-family:"Times New Roman",serif'>, </span><span style='font-size:
+10.0pt;font-family:"Courier New"'>IconButton</span><span style='font-family:
+"Times New Roman",serif'>, </span><span style='font-size:10.0pt;font-family:
+"Courier New"'>ButtonBase</span><span style='font-family:"Times New Roman",serif'>,
+</span><span style='font-size:10.0pt;font-family:"Courier New"'>Chip</span><span
+style='font-family:"Times New Roman",serif'>), typography (</span><span
+style='font-size:10.0pt;font-family:"Courier New"'>Typography</span><span
+style='font-family:"Times New Roman",serif'>), and non-blocking user feedback (</span><span
+style='font-size:10.0pt;font-family:"Courier New"'>Snackbar</span><span
+style='font-family:"Times New Roman",serif'>).</span></p>
+
+<div class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+line-height:normal'><span style='font-family:"Times New Roman",serif'>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:18.0pt;
+font-family:"Segoe UI Emoji",sans-serif'>&#9989;</span></b><b><span
+style='font-size:18.0pt;font-family:"Times New Roman",serif'> Summary</span></b></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>One
+     concise sentence</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Covers
+     <b>layout</b>, <b>interaction</b>, <b>navigation</b>, and <b>feedback</b></span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Sounds
+     natural in a <b>technical interview</b></span></li>
+</ul>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>If
+you want a <b>shorter version</b> or a <b>more casual explanation</b>, I can
+adjust it.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+style='font-family:"Times New Roman",serif'>Put them in a list with description
+in second column</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Here’s
+a <b>clean, interview-ready table</b> with each import and a concise
+description in the second column:</span></p>
+
+<table class=MsoNormalTable border=0 cellpadding=0>
+ <thead>
+  <tr>
+   <td style='padding:.75pt .75pt .75pt .75pt'>
+   <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+   line-height:normal'><b><span style='font-family:"Times New Roman",serif'>Component</span></b></p>
+   </td>
+   <td style='padding:.75pt .75pt .75pt .75pt'>
+   <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+   line-height:normal'><b><span style='font-family:"Times New Roman",serif'>Description</span></b></p>
+   </td>
+  </tr>
+ </thead>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
+  style='font-family:"Times New Roman",serif'>AppBar</span></b></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Provides a top-level application
+  bar used for branding, navigation, and primary actions.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
+  style='font-family:"Times New Roman",serif'>Toolbar</span></b></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Acts as a flexible container
+  inside an AppBar to properly space and align content.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
+  style='font-family:"Times New Roman",serif'>IconButton</span></b></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Displays a clickable icon used
+  for compact actions like menus or controls.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
+  style='font-family:"Times New Roman",serif'>Typography</span></b></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Renders text with consistent
+  Material Design styles and semantic variants.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
+  style='font-family:"Times New Roman",serif'>Container</span></b></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Centers content horizontally and
+  applies responsive max-widths.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
+  style='font-family:"Times New Roman",serif'>Box</span></b></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>A low-level layout component used
+  for spacing, positioning, and styling via the </span><span style='font-size:
+  10.0pt;font-family:"Courier New"'>sx</span><span style='font-family:"Times New Roman",serif'>
+  prop.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
+  style='font-family:"Times New Roman",serif'>Paper</span></b></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Creates a surfaced container with
+  elevation and background styling.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
+  style='font-family:"Times New Roman",serif'>Stack</span></b></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Simplifies flexbox layouts by
+  arranging items in a row or column with consistent spacing.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
+  style='font-family:"Times New Roman",serif'>Chip</span></b></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Displays small, compact elements
+  such as tags, labels, or selected values.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
+  style='font-family:"Times New Roman",serif'>Button</span></b></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Provides a styled, accessible
+  button for primary and secondary user actions.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
+  style='font-family:"Times New Roman",serif'>Divider</span></b></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Adds a visual separator between
+  sections of content.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
+  style='font-family:"Times New Roman",serif'>ButtonBase</span></b></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>A low-level button component used
+  to build custom clickable elements.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
+  style='font-family:"Times New Roman",serif'>Snackbar</span></b></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Shows temporary, non-blocking
+  feedback messages (toast notifications).</span></p>
+  </td>
+ </tr>
+</table>
+
+<div class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+line-height:normal'><span style='font-family:"Times New Roman",serif'>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:18.0pt;
+font-family:"Segoe UI Emoji",sans-serif'>&#9989;</span></b><b><span
+style='font-size:18.0pt;font-family:"Times New Roman",serif'> Summary</span></b></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Clear,
+     concise descriptions</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Interview-appropriate
+     wording</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Maps
+     directly to how you use them in your component</span></li>
+</ul>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

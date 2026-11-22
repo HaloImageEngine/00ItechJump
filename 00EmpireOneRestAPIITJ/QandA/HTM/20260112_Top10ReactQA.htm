@@ -1,0 +1,138 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+code
+	{font-family:"Courier New";}
+.MsoChpDefault
+	{font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p><strong>1) What is React and why is it used?</strong><br>
+React is a JavaScript library developed by Facebook for building user
+interfaces, particularly single-page applications. It allows developers to
+create reusable UI components, manage the state of applications efficiently,
+and update the DOM efficiently using a virtual DOM. React’s component-based
+architecture makes it easier to maintain and scale large applications.</p>
+
+<p><strong>2) What is the difference between a class component and a functional
+component in React?</strong><br>
+Class components are ES6 classes that extend <code><span style='font-size:10.0pt'>React.Component</span></code>
+and can have state and lifecycle methods. Functional components are plain
+JavaScript functions that can return JSX and, with the introduction of hooks,
+can now also manage state and use lifecycle features. Functional components are
+simpler and preferred in modern React development.</p>
+
+<p><strong>3) What are React Hooks?</strong><br>
+Hooks are special functions introduced in React 16.8 that allow functional
+components to use state and other React features like lifecycle methods. Common
+hooks include <code><span style='font-size:10.0pt'>useState</span></code>, <code><span
+style='font-size:10.0pt'>useEffect</span></code>, <code><span style='font-size:
+10.0pt'>useContext</span></code>, <code><span style='font-size:10.0pt'>useRef</span></code>,
+and <code><span style='font-size:10.0pt'>useReducer</span></code>. Hooks make
+it easier to share logic between components and reduce the need for class
+components.</p>
+
+<p><strong>4) What is the virtual DOM and how does it work in React?</strong><br>
+The virtual DOM is an in-memory representation of the real DOM. When the state
+of a component changes, React updates the virtual DOM first, compares it with
+the previous version (diffing), and then efficiently updates only the parts of
+the real DOM that have changed. This improves performance and reduces
+unnecessary re-renders.</p>
+
+<p><strong>5) What is the difference between controlled and uncontrolled
+components?</strong><br>
+Controlled components have their form data managed by React state, meaning the
+value of the input is driven by state and changes are handled via event
+handlers. Uncontrolled components store their own state internally, and React
+accesses the value using refs. Controlled components provide better control and
+validation of user input.</p>
+
+<p><strong>6) What is the purpose of </strong><code><b><span style='font-size:
+10.0pt'>useEffect</span></b></code><strong> in React?</strong><br>
+The <code><span style='font-size:10.0pt'>useEffect</span></code> hook allows
+you to perform side effects in functional components, such as fetching data,
+updating the DOM, or subscribing to events. It can be configured to run after
+every render, only on specific dependencies, or once on component mount, making
+it a flexible replacement for lifecycle methods like <code><span
+style='font-size:10.0pt'>componentDidMount</span></code> and <code><span
+style='font-size:10.0pt'>componentDidUpdate</span></code>.</p>
+
+<p><strong>7) What is React Context and when should you use it?</strong><br>
+React Context is a way to share state or data across multiple components
+without passing props down manually at every level. It is useful for global
+data such as themes, user authentication, or language preferences. Context
+should be used sparingly to avoid unnecessary re-renders and complexity.</p>
+
+<p><strong>8) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>React.memo</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>useMemo</span></b></code><strong>?</strong><br>
+<code><span style='font-size:10.0pt'>React.memo</span></code> is a higher-order
+component used to memoize functional components, preventing unnecessary
+re-renders when props do not change. <code><span style='font-size:10.0pt'>useMemo</span></code>
+is a hook that memoizes the result of a calculation or function, recomputing it
+only when dependencies change. Both help improve performance but are used in
+different contexts.</p>
+
+<p><strong>9) What is the difference between state and props in React?</strong><br>
+Props are read-only values passed from parent to child components, allowing
+data to flow down the component tree. State is managed within a component and
+can change over time, triggering re-renders. Props make components reusable,
+while state makes components interactive and dynamic.</p>
+
+<p><strong>10) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>useState</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>useReducer</span></b></code><strong>?</strong><br>
+<code><span style='font-size:10.0pt'>useState</span></code> is a hook for
+managing simple state variables in functional components. <code><span
+style='font-size:10.0pt'>useReducer</span></code> is used for more complex
+state logic involving multiple related values or actions, following a reducer
+pattern similar to Redux. <code><span style='font-size:10.0pt'>useReducer</span></code>
+provides a predictable way to handle state updates in complex components.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

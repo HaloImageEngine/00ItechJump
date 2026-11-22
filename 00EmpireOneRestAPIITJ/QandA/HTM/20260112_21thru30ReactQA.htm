@@ -1,0 +1,144 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+code
+	{font-family:"Courier New";}
+.MsoChpDefault
+	{font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p><strong>21) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>useRef</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>createRef</span></b></code><strong> in React?</strong><br>
+Both <code><span style='font-size:10.0pt'>useRef</span></code> and <code><span
+style='font-size:10.0pt'>createRef</span></code> are used to access DOM
+elements or persist values across renders, but they differ in behavior. <code><span
+style='font-size:10.0pt'>createRef</span></code> creates a new ref each time a
+component renders, making it suitable for class components. <code><span
+style='font-size:10.0pt'>useRef</span></code> returns the same ref object
+across renders, making it ideal for functional components to maintain
+persistent values without causing re-renders.</p>
+
+<p><strong>22) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>React Router</span></b></code><strong> and traditional
+routing?</strong><br>
+React Router is a library for handling routing in single-page applications
+(SPA) built with React. Unlike traditional routing, which requests a new HTML
+page from the server for each route, React Router dynamically renders
+components on the client side without refreshing the page, resulting in faster
+navigation and a smoother user experience.</p>
+
+<p><strong>23) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>componentDidMount</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>useEffect</span></b></code><strong>?</strong><br>
+<code><span style='font-size:10.0pt'>componentDidMount</span></code> is a
+lifecycle method in class components that runs once after the component is
+mounted. <code><span style='font-size:10.0pt'>useEffect</span></code> in
+functional components can replicate this behavior by passing an empty
+dependency array, running the effect only once after the component mounts. <code><span
+style='font-size:10.0pt'>useEffect</span></code> is more versatile because it
+can also respond to dependency changes.</p>
+
+<p><strong>24) What is prop drilling and how can it be avoided?</strong><br>
+Prop drilling occurs when data is passed through multiple intermediate
+components just to reach a deeply nested component. It can lead to
+harder-to-maintain code. Prop drilling can be avoided using React Context,
+Redux, or other state management libraries to provide global access to the
+required data.</p>
+
+<p><strong>25) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>React.StrictMode</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>ErrorBoundary</span></b></code><strong>?</strong><br>
+<code><span style='font-size:10.0pt'>React.StrictMode</span></code> is a
+development tool that highlights potential issues and runs certain methods
+twice to detect side effects, but it does not handle errors. <code><span
+style='font-size:10.0pt'>ErrorBoundary</span></code> is a component that
+catches JavaScript errors in its child component tree and renders a fallback
+UI, preventing the whole application from crashing.</p>
+
+<p><strong>26) What are controlled forms versus uncontrolled forms in React?</strong><br>
+Controlled forms have their input values tied to React state, with changes
+handled via event handlers. This allows validation and dynamic updates.
+Uncontrolled forms manage their own state internally, and values are accessed
+via refs. Controlled forms provide more predictable behavior and are
+recommended in most cases.</p>
+
+<p><strong>27) What is code splitting in React?</strong><br>
+Code splitting is a technique to split the application bundle into smaller
+chunks that are loaded on demand. React supports this using <code><span
+style='font-size:10.0pt'>React.lazy</span></code> and dynamic imports. Code
+splitting improves performance by reducing the initial load time of large
+applications.</p>
+
+<p><strong>28) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>useImperativeHandle</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>forwardRef</span></b></code><strong>?</strong><br>
+<code><span style='font-size:10.0pt'>forwardRef</span></code> allows a parent
+component to pass a ref to a child component, giving access to its DOM or
+instance. <code><span style='font-size:10.0pt'>useImperativeHandle</span></code>
+is used inside the child component to customize which values or methods are
+exposed to the parent through the ref. Together, they provide controlled access
+to child functionality.</p>
+
+<p><strong>29) What is the difference between state lifting and React Context?</strong><br>
+State lifting involves moving shared state up to a common parent to allow
+multiple child components to access it via props. React Context provides a way
+to share data globally without passing props through every intermediate
+component. Context is preferable when many components across the tree need
+access to the same data.</p>
+
+<p><strong>30) What is the difference between client-side rendering and static
+site generation in React?</strong><br>
+Client-side rendering (CSR) renders content in the browser using JavaScript
+after the HTML is loaded, which may cause slower initial load times. Static
+site generation (SSG) pre-renders pages at build time into HTML, improving
+performance and SEO. Frameworks like Next.js enable both CSR and SSG
+approaches.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

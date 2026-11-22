@@ -1,0 +1,98 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoChpDefault
+	{font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>In
+<b>ASP.NET Core</b>, <b>authorization</b> answers “<i>is this authenticated
+user allowed to do this action/resource?</i>” and the most maintainable way to
+express that is with <b>authorization policies</b>. A <b>policy</b> is a named
+set of requirements (claims, roles, custom rules, authentication scheme, etc.)
+that you register in </span><span style='font-size:10.0pt;font-family:"Courier New"'>AddAuthorization</span><span
+style='font-family:"Times New Roman",serif'> and then apply with </span><span
+style='font-size:10.0pt;font-family:"Courier New"'>[Authorize(Policy =
+&quot;PolicyName&quot;)]</span><span style='font-family:"Times New Roman",serif'>
+(or per-endpoint configuration). Policies let you centralize rules like “must
+have a paid subscription,” “must be in the Admin role,” or “must have a claim </span><span
+style='font-size:10.0pt;font-family:"Courier New"'>permission=orders.read</span><span
+style='font-family:"Times New Roman",serif'>,” and they scale much better than
+scattering role checks throughout controllers.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-family:"Times New Roman",serif'>Claims
+vs Roles</span></b><span style='font-family:"Times New Roman",serif'>: a <b>claim</b>
+is a general key/value piece of identity data about the user (e.g., </span><span
+style='font-size:10.0pt;font-family:"Courier New"'>sub=123</span><span
+style='font-family:"Times New Roman",serif'>, </span><span style='font-size:
+10.0pt;font-family:"Courier New"'>email=...</span><span style='font-family:
+"Times New Roman",serif'>, </span><span style='font-size:10.0pt;font-family:
+"Courier New"'>department=Sales</span><span style='font-family:"Times New Roman",serif'>,
+</span><span style='font-size:10.0pt;font-family:"Courier New"'>permission=orders.read</span><span
+style='font-family:"Times New Roman",serif'>). Claims are flexible and are
+commonly used for fine-grained authorization (permissions, features, tenant,
+subscription, etc.). A <b>role</b> is a special kind of claim used for
+coarse-grained grouping (e.g., Admin, Manager) and is typically checked with </span><span
+style='font-size:10.0pt;font-family:"Courier New"'>[Authorize(Roles=&quot;Admin&quot;)]</span><span
+style='font-family:"Times New Roman",serif'> or </span><span style='font-size:
+10.0pt;font-family:"Courier New"'>RequireRole(&quot;Admin&quot;)</span><span
+style='font-family:"Times New Roman",serif'>. Under the hood, roles are often
+represented as claims (the “role claim type” can vary), but conceptually: <b>roles
+are broad buckets</b>, while <b>claims are more granular</b> and can represent
+many dimensions of access. A common best practice is <b>use roles for
+high-level access</b> (Admin vs User) and <b>claims/policies for specific
+permissions</b> (CanRefund, CanEditOrders), often implemented as </span><span
+style='font-size:10.0pt;font-family:"Courier New"'>RequireClaim(&quot;permission&quot;,&quot;orders.write&quot;)</span><span
+style='font-family:"Times New Roman",serif'> or a custom requirement/handler
+when logic is more complex (e.g., tenant isolation or resource ownership).</span></p>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:13.5pt;
+font-family:"Times New Roman",serif'>Summary</span></b></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Authorization
+policies are reusable, centralized rules you apply to endpoints; roles are
+coarse-grained access groups (often implemented as role-claims), while claims
+are flexible key/value identity attributes ideal for fine-grained permissions.</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

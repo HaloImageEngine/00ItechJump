@@ -1,0 +1,120 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+code
+	{font-family:"Courier New";}
+.MsoChpDefault
+	{font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p><strong>31) What is a SQL Server deadlock and how do you resolve it?</strong><br>
+A deadlock occurs when two or more transactions block each other by holding
+locks on resources that the other needs. SQL Server automatically detects this
+and terminates one of the transactions so the others can continue. Deadlocks
+can be reduced by keeping transactions short, accessing tables in the same
+order, and using proper indexing.</p>
+
+<p><strong>32) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>NOT IN</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>NOT EXISTS</span></b></code><strong>?</strong><br>
+<code><span style='font-size:10.0pt'>NOT IN</span></code> returns no rows if
+the subquery contains a NULL value, which can lead to unexpected results. <code><span
+style='font-size:10.0pt'>NOT EXISTS</span></code> checks for the existence of
+matching rows and works correctly even when NULLs are present. For this reason,
+<code><span style='font-size:10.0pt'>NOT EXISTS</span></code> is generally
+safer and more reliable.</p>
+
+<p><strong>33) What is SQL Server isolation level?</strong><br>
+Isolation levels control how transactions interact with each other and how data
+is locked. Common levels include Read Uncommitted, Read Committed, Repeatable
+Read, Serializable, and Snapshot. Higher isolation levels provide more
+consistency but reduce concurrency.</p>
+
+<p><strong>34) What is snapshot isolation?</strong><br>
+Snapshot isolation uses row versioning instead of locking to provide a
+consistent view of the data. Each transaction sees the data as it existed when
+the transaction started. This improves concurrency and avoids blocking, but it
+requires additional storage in <code><span style='font-size:10.0pt'>tempdb</span></code>.</p>
+
+<p><strong>35) What is a SQL Server cursor?</strong><br>
+A cursor allows you to process rows one at a time rather than as a set. While
+cursors are sometimes necessary, they are generally slower and less efficient
+than set-based operations and should be avoided when possible.</p>
+
+<p><strong>36) What is a covering index and why is it useful?</strong><br>
+A covering index includes all the columns needed to satisfy a query, allowing
+SQL Server to retrieve results without accessing the table itself. This
+significantly improves query performance by reducing disk I/O.</p>
+
+<p><strong>37) What is a fill factor in SQL Server?</strong><br>
+Fill factor determines how much space is left on each index page when an index
+is created or rebuilt. Leaving free space helps reduce page splits when new
+data is inserted, improving performance in heavily updated tables.</p>
+
+<p><strong>38) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>GETDATE()</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>SYSDATETIME()</span></b></code><strong>?</strong><br>
+<code><span style='font-size:10.0pt'>GETDATE()</span></code> returns the
+current date and time with lower precision, while <code><span style='font-size:
+10.0pt'>SYSDATETIME()</span></code> returns a more precise date and time
+including fractional seconds. <code><span style='font-size:10.0pt'>SYSDATETIME()</span></code>
+is preferred when higher precision is needed.</p>
+
+<p><strong>39) What is a SQL Server Agent?</strong><br>
+SQL Server Agent is a service that allows you to automate tasks such as
+backups, index maintenance, and data imports by scheduling jobs. It is
+essential for maintaining and managing production databases.</p>
+
+<p><strong>40) What is the difference between a view and a materialized view?</strong><br>
+A regular view is a stored query that runs each time it is accessed, while a
+materialized view, called an indexed view in SQL Server, stores the result set
+physically on disk. Indexed views improve performance for complex queries but
+require additional maintenance overhead.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

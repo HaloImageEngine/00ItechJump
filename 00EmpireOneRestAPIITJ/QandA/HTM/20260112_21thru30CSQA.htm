@@ -1,0 +1,179 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+code
+	{font-family:"Courier New";}
+.MsoChpDefault
+	{font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p><strong><span style='font-family:"Arial",sans-serif'>21) What is the
+difference between </span></strong><code><b><span style='font-size:10.0pt;
+font-family:"Arial",sans-serif'>List&lt;T&gt;</span></b></code><strong><span
+style='font-family:"Arial",sans-serif'> and </span></strong><code><b><span
+style='font-size:10.0pt;font-family:"Arial",sans-serif'>Array</span></b></code><strong><span
+style='font-family:"Arial",sans-serif'> in C#?</span></strong><span
+style='font-family:"Arial",sans-serif'><br>
+An </span><code><span style='font-size:10.0pt;font-family:"Arial",sans-serif'>Array</span></code><span
+style='font-family:"Arial",sans-serif'> has a fixed size once it is created,
+while a </span><code><span style='font-size:10.0pt;font-family:"Arial",sans-serif'>List&lt;T&gt;</span></code><span
+style='font-family:"Arial",sans-serif'> is dynamic and can grow or shrink as
+needed. </span><code><span style='font-size:10.0pt;font-family:"Arial",sans-serif'>List&lt;T&gt;</span></code><span
+style='font-family:"Arial",sans-serif'> provides many helpful methods such as </span><code><span
+style='font-size:10.0pt;font-family:"Arial",sans-serif'>Add</span></code><span
+style='font-family:"Arial",sans-serif'>, </span><code><span style='font-size:
+10.0pt;font-family:"Arial",sans-serif'>Remove</span></code><span
+style='font-family:"Arial",sans-serif'>, and </span><code><span
+style='font-size:10.0pt;font-family:"Arial",sans-serif'>Find</span></code><span
+style='font-family:"Arial",sans-serif'>, making it easier to work with
+collections. Arrays are slightly faster and more memory efficient, but lists
+are more flexible and commonly used in business applications.</span></p>
+
+<p><strong><span style='font-family:"Arial",sans-serif'>22) What is the purpose
+of the </span></strong><code><b><span style='font-size:10.0pt;font-family:"Arial",sans-serif'>sealed</span></b></code><strong><span
+style='font-family:"Arial",sans-serif'> keyword?</span></strong><span
+style='font-family:"Arial",sans-serif'><br>
+The </span><code><span style='font-size:10.0pt;font-family:"Arial",sans-serif'>sealed</span></code><span
+style='font-family:"Arial",sans-serif'> keyword prevents a class from being
+inherited. This is useful when you want to stop further extension of a class
+for security, performance, or design reasons. It can also be used on methods to
+prevent overriding in derived classes.</span></p>
+
+<p><strong><span style='font-family:"Arial",sans-serif'>23) What is a partial
+class?</span></strong><span style='font-family:"Arial",sans-serif'><br>
+A partial class allows a class definition to be split across multiple files.
+This is commonly used in large projects and in auto-generated code, such as
+Windows Forms or Entity Framework models, where part of the class is generated
+by tools and part is written by the developer.</span></p>
+
+<p><strong><span style='font-family:"Arial",sans-serif'>24) What is method
+overloading?</span></strong><span style='font-family:"Arial",sans-serif'><br>
+Method overloading allows multiple methods to have the same name but different
+parameter lists. The compiler determines which method to call based on the
+number, type, and order of parameters. This improves readability and allows
+related functionality to be grouped under a single method name.</span></p>
+
+<p><strong><span style='font-family:"Arial",sans-serif'>25) What is method
+overriding?</span></strong><span style='font-family:"Arial",sans-serif'><br>
+Method overriding allows a derived class to provide its own implementation of a
+method that is defined in a base class. The base method must be marked as </span><code><span
+style='font-size:10.0pt;font-family:"Arial",sans-serif'>virtual</span></code><span
+style='font-family:"Arial",sans-serif'>, </span><code><span style='font-size:
+10.0pt;font-family:"Arial",sans-serif'>abstract</span></code><span
+style='font-family:"Arial",sans-serif'>, or </span><code><span
+style='font-size:10.0pt;font-family:"Arial",sans-serif'>override</span></code><span
+style='font-family:"Arial",sans-serif'>. This enables polymorphism, where the
+same method call behaves differently depending on the object type.</span></p>
+
+<p><strong><span style='font-family:"Arial",sans-serif'>26) What is the
+difference between </span></strong><code><b><span style='font-size:10.0pt;
+font-family:"Arial",sans-serif'>ref</span></b></code><strong><span
+style='font-family:"Arial",sans-serif'> and </span></strong><code><b><span
+style='font-size:10.0pt;font-family:"Arial",sans-serif'>out</span></b></code><strong><span
+style='font-family:"Arial",sans-serif'> parameters?</span></strong><span
+style='font-family:"Arial",sans-serif'><br>
+Both </span><code><span style='font-size:10.0pt;font-family:"Arial",sans-serif'>ref</span></code><span
+style='font-family:"Arial",sans-serif'> and </span><code><span
+style='font-size:10.0pt;font-family:"Arial",sans-serif'>out</span></code><span
+style='font-family:"Arial",sans-serif'> pass parameters by reference, allowing
+the method to modify the original value. The difference is that </span><code><span
+style='font-size:10.0pt;font-family:"Arial",sans-serif'>ref</span></code><span
+style='font-family:"Arial",sans-serif'> requires the variable to be initialized
+before it is passed, while </span><code><span style='font-size:10.0pt;
+font-family:"Arial",sans-serif'>out</span></code><span style='font-family:"Arial",sans-serif'>
+does not. </span><code><span style='font-size:10.0pt;font-family:"Arial",sans-serif'>out</span></code><span
+style='font-family:"Arial",sans-serif'> parameters are often used when a method
+needs to return multiple values.</span></p>
+
+<p><strong><span style='font-family:"Arial",sans-serif'>27) What is the purpose
+of the </span></strong><code><b><span style='font-size:10.0pt;font-family:"Arial",sans-serif'>yield</span></b></code><strong><span
+style='font-family:"Arial",sans-serif'> keyword?</span></strong><span
+style='font-family:"Arial",sans-serif'><br>
+The </span><code><span style='font-size:10.0pt;font-family:"Arial",sans-serif'>yield</span></code><span
+style='font-family:"Arial",sans-serif'> keyword is used to create an iterator.
+It allows a method to return values one at a time instead of all at once, which
+improves memory usage and performance when working with large collections. Each
+time the iterator is accessed, execution resumes from where it left off.</span></p>
+
+<p><strong><span style='font-family:"Arial",sans-serif'>28) What is a </span></strong><code><b><span
+style='font-size:10.0pt;font-family:"Arial",sans-serif'>record</span></b></code><strong><span
+style='font-family:"Arial",sans-serif'> in C#?</span></strong><span
+style='font-family:"Arial",sans-serif'><br>
+A </span><code><span style='font-size:10.0pt;font-family:"Arial",sans-serif'>record</span></code><span
+style='font-family:"Arial",sans-serif'> is a reference type designed for
+immutable data models. It provides built-in value-based equality, meaning two
+records with the same data are considered equal. Records are commonly used in
+modern C# applications for DTOs and data transfer between layers.</span></p>
+
+<p><strong><span style='font-family:"Arial",sans-serif'>29) What is the
+difference between </span></strong><code><b><span style='font-size:10.0pt;
+font-family:"Arial",sans-serif'>First()</span></b></code><strong><span
+style='font-family:"Arial",sans-serif'> and </span></strong><code><b><span
+style='font-size:10.0pt;font-family:"Arial",sans-serif'>FirstOrDefault()</span></b></code><strong><span
+style='font-family:"Arial",sans-serif'> in LINQ?</span></strong><span
+style='font-family:"Arial",sans-serif'><br>
+</span><code><span style='font-size:10.0pt;font-family:"Arial",sans-serif'>First()</span></code><span
+style='font-family:"Arial",sans-serif'> returns the first element of a sequence
+but throws an exception if the sequence is empty. </span><code><span
+style='font-size:10.0pt;font-family:"Arial",sans-serif'>FirstOrDefault()</span></code><span
+style='font-family:"Arial",sans-serif'> returns the first element or a default
+value, such as </span><code><span style='font-size:10.0pt;font-family:"Arial",sans-serif'>null</span></code><span
+style='font-family:"Arial",sans-serif'> for reference types, if the sequence is
+empty. </span><code><span style='font-size:10.0pt;font-family:"Arial",sans-serif'>FirstOrDefault()</span></code><span
+style='font-family:"Arial",sans-serif'> is safer when you are not sure whether
+data exists.</span></p>
+
+<p><strong><span style='font-family:"Arial",sans-serif'>30) What is a deadlock?</span></strong><span
+style='font-family:"Arial",sans-serif'><br>
+A deadlock occurs when two or more threads are waiting for each other to
+release resources, causing all of them to stop executing. This commonly happens
+when locks are acquired in different orders. Avoiding deadlocks requires
+careful locking strategies, such as always acquiring locks in the same order.</span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

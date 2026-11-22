@@ -1,0 +1,86 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoChpDefault
+	{font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+style='font-family:"Times New Roman",serif'>What is Lazy vs Eager loading in
+c#?</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>In
+C#, <b>lazy loading</b> and <b>eager loading</b> are two strategies used
+primarily with <b>Entity Framework (EF / EF Core)</b> to control how related
+data is retrieved from the database. <b>Lazy loading</b> means related entities
+are not loaded from the database until they are explicitly accessed in code;
+when a navigation property is first referenced, EF automatically issues an
+additional database query to load that data. This approach can reduce initial query
+cost but may lead to performance problems such as the “N+1 query” issue if many
+related entities are accessed in a loop. <b>Eager loading</b>, on the other
+hand, loads related data as part of the initial query using methods like </span><span
+style='font-size:10.0pt;font-family:"Courier New"'>Include()</span><span
+style='font-family:"Times New Roman",serif'> and </span><span style='font-size:
+10.0pt;font-family:"Courier New"'>ThenInclude()</span><span style='font-family:
+"Times New Roman",serif'>, resulting in a single (or fewer) database queries
+that fetch all required data upfront. While eager loading can retrieve more
+data than needed if overused, it provides more predictable performance and is
+generally preferred in scenarios where related data is known to be required.</span></p>
+
+<div class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+line-height:normal'><span style='font-family:"Times New Roman",serif'>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:13.5pt;
+font-family:"Times New Roman",serif'>Summary</span></b></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Lazy
+loading defers loading related data until it is accessed, while eager loading
+loads related data immediately with the main query; eager loading is often
+favored for performance predictability and avoiding excessive database calls.</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

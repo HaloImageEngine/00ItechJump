@@ -1,0 +1,32 @@
+<div class="voicetrain-container">
+  <!-- Audio Player Section -->
+  <div class="audio-section">
+    <h3>Audio Training</h3>
+    <audio #audioPlayer controls class="audio-player">
+      <source [src]="mp3File" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <!-- Document Viewer Section -->
+  <div class="document-section">
+    <h3>Training Document</h3>
+    <div class="document-viewer">
+      <iframe
+        [src]="docUrl"
+        class="doc-iframe"
+        frameborder="0"
+        title="Document Viewer">
+      </iframe>
+    </div>
+    <p style="padding: 10px; text-align: center; font-size: 14px; color: #666;">
+      If the document doesn't load, try the download button below or
+      <a [href]="docxFile" target="_blank" style="color: #007bff;">open in new tab</a>
+    </p>
+    <div class="document-download">
+      <a [href]="docxFile" download class="download-link">
+        📥 Download Document
+      </a>
+    </div>
+  </div>
+</div>

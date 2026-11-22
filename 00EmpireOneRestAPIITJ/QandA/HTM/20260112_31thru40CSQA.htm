@@ -1,0 +1,148 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+code
+	{font-family:"Courier New";}
+.MsoChpDefault
+	{font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p><strong>31) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>String</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>StringBuilder</span></b></code><strong>?</strong><br>
+<code><span style='font-size:10.0pt'>String</span></code> is immutable, meaning
+once it is created it cannot be changed. Every time you modify a string, a new
+object is created in memory. <code><span style='font-size:10.0pt'>StringBuilder</span></code>
+is mutable and allows you to change the contents without creating new objects,
+making it much more efficient for scenarios involving many string
+concatenations or modifications.</p>
+
+<p><strong>32) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>Dispose</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>Finalize</span></b></code><strong>?</strong><br>
+<code><span style='font-size:10.0pt'>Dispose</span></code> is used to
+explicitly release unmanaged resources such as file handles or database
+connections, usually through the <code><span style='font-size:10.0pt'>IDisposable</span></code>
+interface. <code><span style='font-size:10.0pt'>Finalize</span></code> is
+called automatically by the garbage collector before an object is destroyed.
+Using <code><span style='font-size:10.0pt'>Dispose</span></code> is preferred
+because it allows you to free resources as soon as possible instead of waiting
+for garbage collection.</p>
+
+<p><strong>33) What is the purpose of the </strong><code><b><span
+style='font-size:10.0pt'>lock</span></b></code><strong> keyword?</strong><br>
+The <code><span style='font-size:10.0pt'>lock</span></code> keyword is used to
+prevent multiple threads from accessing a block of code at the same time. It
+ensures thread safety by allowing only one thread to enter the critical
+section. This is commonly used when updating shared data in multithreaded
+applications.</p>
+
+<p><strong>34) What is a middleware in ASP.NET Core?</strong><br>
+Middleware is a component in the HTTP request pipeline that processes incoming
+requests and outgoing responses. Each middleware can perform an action, such as
+logging or authentication, and then pass control to the next component. This
+modular design makes it easy to add or remove functionality in a web
+application.</p>
+
+<p><strong>35) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>static</span></b></code><strong> and instance members?</strong><br>
+Static members belong to the class itself, not to any specific object, and are
+shared across all instances. Instance members belong to a specific object and
+can have different values for each instance. Static members are commonly used
+for utility methods or shared data.</p>
+
+<p><strong>36) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>ToList()</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>AsEnumerable()</span></b></code><strong> in LINQ?</strong><br>
+<code><span style='font-size:10.0pt'>ToList()</span></code> executes the query
+immediately and stores the results in a list in memory. <code><span
+style='font-size:10.0pt'>AsEnumerable()</span></code> simply changes the type
+to <code><span style='font-size:10.0pt'>IEnumerable</span></code> without
+executing the query, allowing deferred execution to continue. <code><span
+style='font-size:10.0pt'>ToList()</span></code> is useful when you need the
+data immediately, while <code><span style='font-size:10.0pt'>AsEnumerable()</span></code>
+is useful for switching from database execution to in-memory processing.</p>
+
+<p><strong>37) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>Span&lt;T&gt;</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>Array</span></b></code><strong>?</strong><br>
+<code><span style='font-size:10.0pt'>Span&lt;T&gt;</span></code> is a
+lightweight structure that represents a contiguous region of memory and can
+point to arrays, stack memory, or unmanaged memory. It provides
+high-performance access without additional allocations. Arrays are
+heap-allocated and have a fixed size, while <code><span style='font-size:10.0pt'>Span&lt;T&gt;</span></code>
+allows safer and faster memory slicing.</p>
+
+<p><strong>38) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>DateTime</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>DateTimeOffset</span></b></code><strong>?</strong><br>
+<code><span style='font-size:10.0pt'>DateTime</span></code> represents a date
+and time without always clearly specifying the time zone. <code><span
+style='font-size:10.0pt'>DateTimeOffset</span></code> includes both the date,
+time, and the offset from UTC, making it more reliable for storing and
+transferring times across different time zones. In distributed systems, <code><span
+style='font-size:10.0pt'>DateTimeOffset</span></code> is generally preferred.</p>
+
+<p><strong>39) What is a background service in .NET?</strong><br>
+A background service is a long-running process hosted within an ASP.NET Core or
+.NET application. It is typically used for tasks such as sending emails,
+processing queues, or running scheduled jobs. These services run independently
+of user requests.</p>
+
+<p><strong>40) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>Equals()</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>ReferenceEquals()</span></b></code><strong>?</strong><br>
+<code><span style='font-size:10.0pt'>Equals()</span></code> checks whether two
+objects are logically equal based on their values. <code><span
+style='font-size:10.0pt'>ReferenceEquals()</span></code> checks whether two
+variables refer to the exact same object in memory. This distinction is
+important when working with reference types where two separate objects can
+contain the same data but still be different instances.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

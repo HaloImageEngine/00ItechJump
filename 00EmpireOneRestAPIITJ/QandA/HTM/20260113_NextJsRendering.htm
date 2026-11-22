@@ -1,0 +1,82 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoChpDefault
+	{font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+style='font-family:"Times New Roman",serif'>In Next.js , Give a paragraph for
+each of the render strategies SSR (Server-Side Rendering) SSG (Static Site
+Generation) ISR (Incremental Static Regeneration) CSR (Client-Side Rendering)</span></p>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-family:"Times New Roman",serif'>Next.JS
+1) Server-Side Rendering (SSR)</span></b><span style='font-family:"Times New Roman",serif'>
+in Next.js generates the HTML for a page on the server for every incoming
+request. When a user requests a page, the server fetches the required data,
+renders the React components into HTML, and sends the fully populated page to
+the browser. This approach ensures that users and search engines receive
+up-to-date content immediately, making it ideal for dynamic, personalized, or
+frequently changing data. The tradeoff is increased server load and slightly
+slower response times compared to static pages. <b>2)Static Site Generation
+(SSG)</b> in Next.js pre-renders pages at build time, producing static HTML
+files that can be served directly from a CDN. Because the content is generated
+ahead of time, pages load extremely fast and scale very well with high traffic.
+SSG is best suited for content that does not change often, such as marketing
+pages, blogs, or documentation, but it requires a rebuild and redeploy whenever
+the underlying data changes.  <b>3)Incremental Static Regeneration (ISR)</b>
+combines the performance benefits of static generation with the flexibility of
+server rendering. Pages are initially generated as static HTML, but Next.js can
+re-generate them in the background after a specified revalidation interval when
+new requests come in. This allows content to stay reasonably fresh without
+rebuilding the entire site, making ISR ideal for pages that change occasionally
+but still need the speed and scalability of static delivery. <b>4)Client-Side
+Rendering (CSR)</b> in Next.js renders pages entirely in the browser after the
+initial JavaScript bundle is downloaded. The server typically sends a minimal
+HTML shell, and data is fetched on the client using hooks or effects once the
+page loads. CSR is useful for highly interactive, user-specific experiences
+such as dashboards or internal tools, but it can result in slower initial load
+times and weaker SEO compared to server-rendered or statically generated pages.</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

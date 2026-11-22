@@ -1,0 +1,105 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+code
+	{font-family:"Courier New";}
+.MsoChpDefault
+	{font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal>In React, <strong><span style='font-family:"Aptos",sans-serif'>functional
+components</span></strong> are the modern and preferred way to build UI
+components because they are simpler, more readable, and easier to test than
+class-based components. A functional component is a plain JavaScript or
+TypeScript function that receives <code><span style='font-size:10.0pt;
+line-height:115%'>props</span></code> as input and returns JSX describing what
+should appear on the screen. With the introduction of <strong><span
+style='font-family:"Aptos",sans-serif'>React Hooks</span></strong> such as <code><span
+style='font-size:10.0pt;line-height:115%'>useState</span></code>, <code><span
+style='font-size:10.0pt;line-height:115%'>useEffect</span></code>, and <code><span
+style='font-size:10.0pt;line-height:115%'>useContext</span></code>, functional
+components can manage state, handle side effects, and share logic without
+needing classes or lifecycle methods. They promote better separation of
+concerns, reduce boilerplate code, and encourage composition by breaking
+complex UIs into smaller, reusable functions. Because functional components are
+lightweight and work seamlessly with modern React features like concurrent
+rendering and server components, they are now the standard approach for
+building scalable and maintainable React applications.</p>
+
+<p class=MsoNormal><b>useState</b> is a React Hook used to add and manage local
+state inside functional components. It allows a component to store values that
+can change over time, such as form inputs, counters, or UI toggles, and
+automatically triggers a re-render when the state updates. The hook returns the
+current state value and a setter function, encouraging immutable updates and
+predictable UI behavior. By keeping state logic close to where it is used,
+useState makes components easier to understand and maintain.</p>
+
+<p class=MsoNormal><b>useEffect</b> is a Hook that handles side effects in
+functional components, such as data fetching, subscriptions, timers, or manual
+DOM interactions. It runs after the component renders and can be configured to
+run on every render, only once, or when specific dependencies change. The
+cleanup function returned by useEffect allows developers to properly release
+resources like event listeners or intervals, preventing memory leaks. This hook
+replaces many class lifecycle methods and provides a unified way to manage
+component side effects.</p>
+
+<p class=MsoNormal><b>useMemo</b> is a performance optimization Hook that
+memoizes the result of an expensive calculation so it is only recomputed when
+its dependencies change. It helps avoid unnecessary recalculations during
+re-renders, especially when dealing with complex computations or derived data.
+While it does not prevent re-renders by itself, useMemo ensures that
+computationally heavy logic runs only when needed, improving performance in
+data-intensive or frequently updating components.</p>
+
+<p class=MsoNormal><b>useCallback</b> is a Hook used to memoize function
+references, ensuring the same function instance is reused between renders
+unless its dependencies change. This is particularly useful when passing
+callbacks to child components that rely on reference equality (such as those
+wrapped in React.memo) to avoid unnecessary re-renders. By stabilizing function
+references, useCallback helps optimize component performance and maintain
+predictable rendering behavior in complex component trees.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

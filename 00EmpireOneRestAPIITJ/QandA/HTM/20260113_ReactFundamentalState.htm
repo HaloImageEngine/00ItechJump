@@ -1,0 +1,98 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoChpDefault
+	{font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>In
+React, <b>controlled</b> and <b>uncontrolled</b> inputs describe two different
+ways of managing form data. A <b>controlled input</b> is fully managed by React
+state, where the input’s value is stored in a state variable and updated
+through event handlers such as </span><span style='font-size:10.0pt;font-family:
+"Courier New"'>onChange</span><span style='font-family:"Times New Roman",serif'>.
+This approach makes the input value the single source of truth in React,
+enabling easy validation, conditional logic, and consistent UI behavior, but it
+can add more code and re-renders for large or complex forms. An <b>uncontrolled
+input</b>, on the other hand, lets the DOM manage the input’s state internally,
+and React accesses the value only when needed, typically using a </span><span
+style='font-size:10.0pt;font-family:"Courier New"'>ref</span><span
+style='font-family:"Times New Roman",serif'>. Uncontrolled inputs require less
+boilerplate and can be simpler for quick forms or integrations with non-React
+libraries, but they offer less control and predictability compared to
+controlled inputs. In practice, controlled inputs are preferred for most React
+applications where validation and dynamic behavior are important, while
+uncontrolled inputs are useful for simpler or performance-sensitive scenarios.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>In
+React, <b>component reusability</b> is the practice of designing components so
+they can be used across multiple parts of an application without duplication or
+modification. Reusable components are typically small, focused, and driven by <b>props</b>,
+allowing their behavior and appearance to be customized while keeping the
+underlying logic consistent. Techniques such as <b>composition</b> (passing
+children or render props), separating presentational components from business
+logic, and leveraging hooks to share reusable logic all contribute to highly
+reusable designs. By building components that are decoupled from specific data
+sources and application state, React applications become easier to maintain,
+test, and scale, while also improving development speed and consistency across
+the user interface.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>In
+React, <b>lifting state</b> and <b>context</b> are two approaches for sharing
+state between components, each suited to different scenarios. <b>Lifting state</b>
+involves moving shared state up to the closest common parent component and
+passing it down to children via props, which keeps data flow explicit and easy
+to trace, making it ideal for localized or simple component relationships.
+However, as applications grow deeper, this can lead to <b>prop drilling</b>,
+where props are passed through many intermediate components that do not
+directly use the data. <b>Context</b>, on the other hand, allows state to be
+shared globally or across broad sections of the component tree without passing
+props at every level, making it well-suited for cross-cutting concerns such as
+themes, authentication, or user preferences. While context reduces prop
+drilling and improves convenience, it can obscure data flow and cause
+unnecessary re-renders if overused, so lifting state is generally preferred for
+limited, localized sharing, while context is best reserved for widely shared or
+app-level state.</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

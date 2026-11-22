@@ -1,0 +1,133 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+code
+	{font-family:"Courier New";}
+.MsoChpDefault
+	{font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p><strong>11) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>WHERE</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>HAVING</span></b></code><strong>?</strong><br>
+The <code><span style='font-size:10.0pt'>WHERE</span></code> clause is used to
+filter rows before grouping occurs, while the <code><span style='font-size:
+10.0pt'>HAVING</span></code> clause is used to filter grouped results after a <code><span
+style='font-size:10.0pt'>GROUP BY</span></code> operation. <code><span
+style='font-size:10.0pt'>WHERE</span></code> works on individual rows, whereas <code><span
+style='font-size:10.0pt'>HAVING</span></code> works on aggregated data such as
+counts and sums.</p>
+
+<p><strong>12) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>INNER JOIN</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>LEFT JOIN</span></b></code><strong>?</strong><br>
+An <code><span style='font-size:10.0pt'>INNER JOIN</span></code> returns only
+the rows that have matching values in both tables. A <code><span
+style='font-size:10.0pt'>LEFT JOIN</span></code> returns all rows from the left
+table and the matching rows from the right table, and if there is no match, it
+returns NULLs for the right table’s columns. <code><span style='font-size:10.0pt'>LEFT
+JOIN</span></code> is commonly used when you want all records from one table
+regardless of whether a match exists.</p>
+
+<p><strong>13) What is a composite key?</strong><br>
+A composite key is a primary key that consists of two or more columns used
+together to uniquely identify a row. It is often used in junction tables, such
+as those that represent many-to-many relationships, where a single column is
+not sufficient to guarantee uniqueness.</p>
+
+<p><strong>14) What is an execution plan?</strong><br>
+An execution plan is a detailed description of how SQL Server will execute a
+query. It shows which indexes are used, how tables are joined, and the
+estimated cost of each step. Execution plans are essential for query tuning and
+performance optimization.</p>
+
+<p><strong>15) What is a CTE (Common Table Expression)?</strong><br>
+A CTE is a temporary result set defined using the <code><span style='font-size:
+10.0pt'>WITH</span></code> keyword that can be referenced within a SELECT,
+INSERT, UPDATE, or DELETE statement. It improves readability and is often used
+for recursive queries and complex data transformations.</p>
+
+<p><strong>16) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>ISNULL</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>COALESCE</span></b></code><strong>?</strong><br>
+<code><span style='font-size:10.0pt'>ISNULL</span></code> replaces a NULL value
+with a specified replacement value and is specific to SQL Server. <code><span
+style='font-size:10.0pt'>COALESCE</span></code> returns the first non-NULL
+value from a list of expressions and is part of the SQL standard. <code><span
+style='font-size:10.0pt'>COALESCE</span></code> is more flexible when checking
+multiple columns.</p>
+
+<p><strong>17) What is a trigger?</strong><br>
+A trigger is a special type of stored procedure that automatically executes
+when an INSERT, UPDATE, or DELETE occurs on a table. Triggers are commonly used
+for auditing, enforcing business rules, and maintaining data integrity.</p>
+
+<p><strong>18) What is a covering index?</strong><br>
+A covering index is an index that contains all the columns needed to satisfy a
+query, either in the key or as included columns. This allows SQL Server to
+retrieve data directly from the index without accessing the table, which
+greatly improves query performance.</p>
+
+<p><strong>19) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>ROW_NUMBER()</span></b></code><strong> and </strong><code><b><span
+style='font-size:10.0pt'>RANK()</span></b></code><strong>?</strong><br>
+<code><span style='font-size:10.0pt'>ROW_NUMBER()</span></code> assigns a
+unique sequential number to each row, even if values are the same. <code><span
+style='font-size:10.0pt'>RANK()</span></code> assigns the same rank to rows
+with equal values but leaves gaps in the ranking. These functions are commonly
+used for pagination and reporting.</p>
+
+<p><strong>20) What is database normalization vs denormalization?</strong><br>
+Normalization organizes data into separate tables to reduce redundancy and
+improve integrity. Denormalization combines data into fewer tables to improve
+read performance. In SQL Server, normalized designs are common for
+transactional systems, while denormalized designs are often used in reporting
+and data warehouses.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoChpDefault
+	{font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+style='font-family:"Times New Roman",serif'>Migrations vs Database-first in c#.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>In
+C#, particularly when using <b>Entity Framework or Entity Framework Core</b>, <b>Migrations</b>
+and <b>Database-First</b> are two different approaches for managing the
+database schema and application data model. With the <b>Migrations (Code-First)</b>
+approach, developers define entity classes and relationships in C# code, and
+Entity Framework generates and applies database schema changes through
+versioned migration files. This allows the database structure to evolve
+alongside the codebase, supports source control, enables repeatable deployments
+across environments, and makes schema changes explicit and traceable. In
+contrast, the <b>Database-First</b> approach starts with an existing database
+schema, from which Entity Framework generates entity classes and a context
+using scaffolding tools; this is often used when working with legacy databases
+or when the database is managed by a separate team. While Database-First can be
+faster to get started with an established schema, it can be harder to track
+incremental changes over time and may require regenerating models when the
+database changes.</span></p>
+
+<div class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+line-height:normal'><span style='font-family:"Times New Roman",serif'>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:13.5pt;
+font-family:"Times New Roman",serif'>Summary</span></b></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-family:"Times New Roman",serif'>Migrations
+(Code-First) treat code as the source of truth and manage schema changes
+through versioned migrations, while Database-First treats the database as the
+source of truth and generates code from it, making each approach suitable for
+different project and team workflows.</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoChpDefault
+	{font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal><b>1) What is the difference between class and struct in C#?</b><br>
+A class is a reference type while a struct is a value type. This means classes
+are stored on the heap and passed by reference, whereas structs are usually
+stored on the stack and passed by value. When you pass a class to a method, you
+pass a reference to the same object, so changes affect the original instance.
+With a struct, a copy is passed unless it is explicitly passed by reference.
+Structs are best suited for small, immutable data types such as coordinates or
+colors, while classes are better for complex objects that represent entities
+with identity.</p>
+
+<p class=MsoNormal><b>2) What is garbage collection in .NET?</b><br>
+Garbage collection is the automatic memory management system in .NET that frees
+memory occupied by objects that are no longer being used. The CLR (Common
+Language Runtime) tracks which objects are still referenced and periodically
+removes those that are not. This prevents memory leaks and eliminates the need
+for manual memory deallocation. Garbage collection also compacts memory to
+reduce fragmentation and improve performance, making memory usage more
+efficient and reliable.</p>
+
+<p class=MsoNormal><b>3) What is the difference between interface and abstract
+class?</b><br>
+An interface defines a contract that a class must follow, specifying method
+signatures without implementation, while an abstract class can contain both
+abstract methods and fully implemented methods. A class can implement multiple
+interfaces but can inherit from only one abstract class. Interfaces are best
+used when you want to define a capability, while abstract classes are useful
+when you want to share base functionality and enforce common behavior among
+derived classes.</p>
+
+<p class=MsoNormal><b>4) What is dependency injection in C#?</b><br>
+Dependency injection is a design pattern that allows a class to receive its
+dependencies from an external source instead of creating them internally. This
+makes the code more flexible, easier to test, and easier to maintain. In
+ASP.NET Core, dependency injection is built into the framework and allows
+services to be registered and injected into controllers or other classes. This
+promotes loose coupling and better separation of concerns.</p>
+
+<p class=MsoNormal><b>5) What is LINQ and why is it useful?</b><br>
+LINQ (Language Integrated Query) allows developers to write SQL-like queries
+directly in C# to query collections, databases, XML, and more. It provides a
+consistent, strongly typed, and readable way to filter, sort, group, and
+project data. LINQ improves productivity and reduces errors by enabling
+compile-time checking and IntelliSense support while keeping queries close to
+the business logic.</p>
+
+<p class=MsoNormal><b>6) What is the difference between IEnumerable and
+IQueryable?</b><br>
+IEnumerable is used to iterate over in-memory collections and executes queries
+in the application’s memory. IQueryable is used when querying data from
+external sources like databases and allows the query to be translated into SQL
+and executed on the database server. Using IQueryable is more efficient for
+large datasets because filtering and sorting happen in the database instead of
+in application memory.</p>
+
+<p class=MsoNormal><b>7) What are async and await in C#?</b><br>
+async and await are keywords used to write asynchronous code that does not
+block the main thread. They allow long-running operations such as database
+calls or web requests to run in the background while the application remains
+responsive. This improves performance and scalability, especially in web
+applications where many users may be making requests at the same time.</p>
+
+<p class=MsoNormal><b>8) What is the difference between Task and Thread?</b><br>
+A Thread represents a physical thread of execution, while a Task represents an
+asynchronous operation. Tasks are higher-level and are managed by the .NET
+thread pool, making them more efficient and easier to use. Tasks also support
+continuations, cancellation, and exception handling, making them ideal for
+modern asynchronous programming.</p>
+
+<p class=MsoNormal><b>9) What is a delegate in C#?</b><br>
+A delegate is a type that represents a reference to a method with a specific
+signature. It allows methods to be passed as parameters, stored in variables,
+and invoked dynamically. Delegates are the foundation for events and lambda
+expressions in C#. They enable flexible and decoupled designs, especially in
+event-driven and callback-based programming.</p>
+
+<p class=MsoNormal><b>10) What is the difference between == and .Equals() in
+C#?</b><br>
+The == operator compares two objects based on how it is implemented for that
+type, which could be reference equality or value equality. The .Equals() method
+is used to determine logical equality between objects. For reference types, ==
+by default checks if both variables point to the same object, while .Equals()
+can be overridden to compare object values. For value types, both typically
+compare the actual values.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

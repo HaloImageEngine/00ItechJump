@@ -1,0 +1,111 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoChpDefault
+	{font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal><b>11) What is boxing and unboxing in C#?</b><br>
+Boxing is the process of converting a value type, such as an int, into a
+reference type like object. Unboxing is the reverse process, where the value is
+extracted back into a value type. Boxing and unboxing have performance costs
+because they involve memory allocation and type conversion, so they should be
+avoided in performance-critical code whenever possible.</p>
+
+<p class=MsoNormal><b>12) What is the difference between var and dynamic?</b><br>
+var is strongly typed and the compiler determines the type at compile time,
+meaning the variable’s type cannot change. dynamic, on the other hand, is
+resolved at runtime and bypasses compile-time type checking. While dynamic
+provides flexibility, it can lead to runtime errors if misused, so var is
+generally preferred for safety and performance.</p>
+
+<p class=MsoNormal><b>13) What are extension methods?</b><br>
+Extension methods allow you to add new methods to existing types without
+modifying their source code or creating a new derived type. They are defined in
+static classes and are called like instance methods. Extension methods are
+widely used in LINQ and make code more readable and expressive.</p>
+
+<p class=MsoNormal><b>14) What is a nullable type in C#?</b><br>
+A nullable type allows value types, such as int or DateTime, to store null.
+This is done using the ? syntax, for example int?. Nullable types are useful
+when working with databases or situations where a value may be missing or
+undefined.</p>
+
+<p class=MsoNormal><b>15) What is the purpose of the using statement?</b><br>
+The using statement ensures that unmanaged resources such as file handles,
+database connections, and streams are properly released when they are no longer
+needed. It automatically calls the Dispose method at the end of the block, even
+if an exception occurs, making resource management safer and cleaner.</p>
+
+<p class=MsoNormal><b>16) What is a singleton design pattern?</b><br>
+The singleton pattern ensures that only one instance of a class exists in an
+application and provides a global access point to it. It is commonly used for
+logging, configuration, and caching. In C#, this is typically implemented using
+a private constructor and a static instance property.</p>
+
+<p class=MsoNormal><b>17) What is the difference between readonly and const?</b><br>
+const fields are compile-time constants and must be assigned a value when
+declared. readonly fields are assigned at runtime, usually in a constructor,
+and cannot be changed afterward. readonly is more flexible and is often used
+when values depend on runtime data.</p>
+
+<p class=MsoNormal><b>18) What is reflection in C#?</b><br>
+Reflection allows a program to inspect its own metadata, such as types,
+methods, properties, and attributes, at runtime. It is often used in
+frameworks, dependency injection, and serialization. While powerful, reflection
+can be slower than normal code execution and should be used carefully.</p>
+
+<p class=MsoNormal><b>19) What is the difference between throw and throw ex?</b><br>
+Using throw preserves the original stack trace of an exception, making
+debugging easier. Using throw ex resets the stack trace and hides where the
+exception originally occurred. Best practice is to use throw when rethrowing an
+exception.</p>
+
+<p class=MsoNormal><b>20) What are attributes in C#?</b><br>
+Attributes are metadata that can be applied to classes, methods, properties,
+and other program elements. They provide additional information that can be
+read at runtime using reflection. Attributes are commonly used for validation,
+serialization, and framework configuration.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+code
+	{font-family:"Courier New";}
+.MsoChpDefault
+	{font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p><strong>1) What is SQL Server and what is it used for?</strong><br>
+SQL Server is Microsoft’s relational database management system used to store,
+manage, and retrieve data efficiently. It supports structured data,
+transactions, security, backup and recovery, and high availability. SQL Server
+is widely used in enterprise applications, web applications, and data
+warehousing solutions because of its reliability, performance, and tight
+integration with the Microsoft .NET ecosystem.</p>
+
+<p><strong>2) What is the difference between a clustered and a non-clustered
+index?</strong><br>
+A clustered index defines the physical order of data in a table, meaning the
+table itself is stored in the order of the clustered index. A table can have
+only one clustered index. A non-clustered index is a separate structure that
+contains pointers to the actual data rows, and a table can have multiple
+non-clustered indexes. Clustered indexes are best for range queries, while
+non-clustered indexes are best for fast lookups.</p>
+
+<p><strong>3) What is a primary key and a foreign key?</strong><br>
+A primary key uniquely identifies each row in a table and cannot contain
+duplicate or null values. A foreign key is a column that references the primary
+key of another table, creating a relationship between the two. Foreign keys
+enforce referential integrity by ensuring that related data remains consistent
+across tables.</p>
+
+<p><strong>4) What is normalization in SQL Server?</strong><br>
+Normalization is the process of organizing data into tables to reduce
+redundancy and improve data integrity. It involves breaking large tables into
+smaller related tables and defining relationships between them. Common normal
+forms such as 1NF, 2NF, and 3NF help ensure that data is stored efficiently and
+anomalies during insert, update, or delete operations are avoided.</p>
+
+<p><strong>5) What is a stored procedure?</strong><br>
+A stored procedure is a precompiled set of SQL statements stored in the
+database. It can accept parameters, perform logic, and return results. Stored
+procedures improve performance, enhance security by limiting direct table
+access, and make database logic easier to maintain and reuse.</p>
+
+<p><strong>6) What is the difference between </strong><code><b><span
+style='font-size:10.0pt'>DELETE</span></b></code><strong>, </strong><code><b><span
+style='font-size:10.0pt'>TRUNCATE</span></b></code><strong>, and </strong><code><b><span
+style='font-size:10.0pt'>DROP</span></b></code><strong>?</strong><br>
+<code><span style='font-size:10.0pt'>DELETE</span></code> removes specific rows
+from a table and can be rolled back if used inside a transaction. <code><span
+style='font-size:10.0pt'>TRUNCATE</span></code> removes all rows from a table
+quickly and cannot be rolled back, but it keeps the table structure. <code><span
+style='font-size:10.0pt'>DROP</span></code> removes the entire table, including
+its structure and data.</p>
+
+<p><strong>7) What is a transaction in SQL Server?</strong><br>
+A transaction is a group of SQL operations that are executed as a single unit
+of work. It follows the ACID properties: Atomicity, Consistency, Isolation, and
+Durability. Transactions ensure that either all operations succeed or none are
+applied, protecting data from corruption.</p>
+
+<p><strong>8) What is a view?</strong><br>
+A view is a virtual table created by a SQL query. It does not store data itself
+but provides a way to simplify complex queries, improve security, and present
+data in a specific format. Views are often used to limit user access to certain
+columns or rows.</p>
+
+<p><strong>9) What is indexing and why is it important?</strong><br>
+Indexing improves query performance by allowing SQL Server to find data faster
+instead of scanning the entire table. Proper indexing significantly reduces
+query execution time, especially for large tables. However, too many indexes
+can slow down insert and update operations, so they must be used carefully.</p>
+
+<p><strong>10) What is a deadlock in SQL Server?</strong><br>
+A deadlock occurs when two or more transactions block each other by holding
+locks on resources that the other needs. SQL Server detects deadlocks
+automatically and terminates one of the transactions so the others can
+continue. Proper indexing, consistent locking order, and short transactions
+help reduce deadlocks.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+# Generated production drops (rebuild with Publish-Prod.ps1)
+publish/api/
+publish/ui/
+publish/build-info.txt
+
+# --- Angular (ItechJump/) ---
+ItechJump/node_modules/
+ItechJump/dist/
+ItechJump/.angular/
+ItechJump/coverage/
+ItechJump/npm-debug.log*
+ItechJump/yarn-error.log*
+
+# --- ASP.NET API (00EmpireOneRestAPIITJ/) ---
+00EmpireOneRestAPIITJ/bin/
+00EmpireOneRestAPIITJ/obj/
+00EmpireOneRestAPIITJ/.vs/
+00EmpireOneRestAPIITJ/**/*.user
+00EmpireOneRestAPIITJ/**/*.suo
+00EmpireOneRestAPIITJ/publish/
+00EmpireOneRestAPIITJ/Web.config
+00EmpireOneRestAPIITJ/Web.*.config
+00EmpireOneRestAPIITJ/QandA/**/*.mkv
+00EmpireOneRestAPIITJ/QandA/OrigVideo/
+
+# Secrets / local config
+**/.env
+**/.env.*
+**/secrets.json
+**/*.pfx
+**/*.pem
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+**/.history/
+.vscode/
