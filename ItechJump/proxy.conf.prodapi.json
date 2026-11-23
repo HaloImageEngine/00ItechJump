@@ -1,0 +1,14 @@
+{
+  "/api": {
+    "target": "https://api.itechjump.com",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/QandA": {
+    "target": "https://api.itechjump.com",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

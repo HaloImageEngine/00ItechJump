@@ -2,8 +2,8 @@
   <!-- Audio Player Section -->
   <div class="audio-section">
     <h3>Audio Training</h3>
-    <audio #audioPlayer controls class="audio-player">
-      <source [src]="mp3File" type="audio/mpeg">
+    <!-- Bound on <audio> (URL context), not <source> (resource-URL context, throws NG0904 for plain strings). -->
+    <audio #audioPlayer controls class="audio-player" [attr.src]="mp3File || null">
       Your browser does not support the audio element.
     </audio>
   </div>

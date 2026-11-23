@@ -39,6 +39,18 @@ namespace EmpireOneRestAPIITJ.Security
             }
 
             var path = HttpContext.Current?.Request?.AppRelativeCurrentExecutionFilePath ?? string.Empty;
+
+            if (path.StartsWith("~/QandA/", StringComparison.OrdinalIgnoreCase))
+            {
+                // Training documents (Word-exported .htm) are framed by the ItechJump UI on another origin.
+                // X-Frame-Options cannot allow a cross-origin parent, so rely on frame-ancestors instead.
+                response.Headers.Remove("X-Frame-Options");
+                response.Headers["Content-Security-Policy"] =
+                    "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; " +
+                    "frame-ancestors 'self' https://itechjump.com https://www.itechjump.com http://localhost:4200; base-uri 'self'";
+                return;
+            }
+
             if (path.IndexOf("swagger", StringComparison.OrdinalIgnoreCase) < 0)
             {
                 response.Headers["Content-Security-Policy"] =

@@ -368,6 +368,8 @@
       <DependentUpon>Model_LottoJump_EF.edmx</DependentUpon>
       <LastGenOutput>Model_LottoJump_EF.cs</LastGenOutput>
     </Content>
+    <Content Include="QandA\PDF\*.pdf" />
+    <Content Include="QandA\Document\*.htm" />
     <Content Include="QandA\HTM\20260112_01thru10SQLQA.htm" />
     <Content Include="QandA\HTM\20260112_11thru20CSQA.htm" />
     <Content Include="QandA\HTM\20260112_11thru20ReactQA.htm" />
