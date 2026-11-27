@@ -5,6 +5,7 @@
 // Learn more about theming and how to use it for your application's
 // custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
+@use 'breakpoints' as bp;
 
 html {
   @include mat.theme((
@@ -184,4 +185,84 @@ textarea.mat-mdc-input-element,
 .page-hero .brand-logo--rocket {
   height: clamp(44px, 9vw, 68px);
   max-width: 72px;
+}
+
+/* =====================================================================
+   Mobile + Desktop base
+   Breakpoint: styles/_breakpoints.scss ($mobile-max) — same value as
+   DeviceService (core/services/device.service.ts). <html> also gets
+   .is-mobile / .is-desktop from DeviceService.
+   ===================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden; /* no sideways page scroll on phones */
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+img,
+video {
+  height: auto;
+}
+
+/* Wide tables scroll inside their own box instead of stretching the page */
+.table-container,
+.plans-table-container {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@include bp.mobile {
+  /* iOS zooms into inputs with font-size < 16px — prevent that */
+  input,
+  select,
+  textarea,
+  .mat-mdc-input-element,
+  .mat-mdc-select {
+    font-size: 16px !important;
+  }
+
+  /* Comfortable touch targets */
+  button,
+  .mat-mdc-button-base {
+    min-height: 40px;
+  }
+
+  .mat-mdc-option {
+    min-height: 48px;
+  }
+
+  /* Dialogs use almost the full screen width */
+  .cdk-overlay-pane.mat-mdc-dialog-panel {
+    max-width: calc(100vw - 24px) !important;
+    width: calc(100vw - 24px) !important;
+  }
+
+  /* Select dropdown panels never wider than the screen */
+  .mat-mdc-select-panel {
+    max-width: calc(100vw - 24px) !important;
+  }
+
+  .page-hero {
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+  }
 }

@@ -5,6 +5,7 @@ import { NavComponent } from '../nav/nav.component';
 import { BrandLogoComponent } from '../brand-logo/brand-logo.component';
 import { environment } from '../../../environments/environment';
 import { AuthService } from '../../core/services/auth.service';
+import { DeviceService } from '../../core/services/device.service';
 
 @Component({
   selector: 'app-header',
@@ -16,6 +17,7 @@ import { AuthService } from '../../core/services/auth.service';
 export class HeaderComponent implements OnInit, OnDestroy {
   private router = inject(Router);
   private authService = inject(AuthService);
+  protected device = inject(DeviceService);
 
   // Auth state
   isLoggedIn = false;

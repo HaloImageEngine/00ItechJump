@@ -1,3 +1,5 @@
+@use 'breakpoints' as bp;
+
 .pc-test-page {
   display: flex;
   flex-direction: column;
@@ -385,6 +387,51 @@
         color: #1e3a5f !important;
         font-weight: 500;
       }
+    }
+  }
+}
+
+/* Mobile: single column, no sticky panel, compact spacing */
+@include bp.mobile {
+  .pc-test-page {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .page-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .content-wrapper {
+    gap: 12px;
+  }
+
+  .left-panel,
+  .right-panel {
+    min-height: 0;
+  }
+
+  .right-panel {
+    position: static;
+  }
+
+  .button-row {
+    flex-wrap: wrap;
+    gap: 8px;
+
+    button {
+      flex: 1 1 auto;
+    }
+  }
+
+  .answer-placeholder {
+    padding: 24px 16px;
+    min-height: 140px;
+
+    mat-icon {
+      font-size: 40px;
+      width: 40px;
+      height: 40px;
     }
   }
 }

@@ -1,3 +1,5 @@
+@use 'breakpoints' as bp;
+
 .voicetrain-container {
   padding: 10px;
   max-width: 1200px;
@@ -78,17 +80,25 @@
   }
 }
 
-// Responsive design
-@media (max-width: 768px) {
+// Responsive design (Mobile)
+@include bp.mobile {
   .voicetrain-container {
     padding: 10px;
 
+    .document-section {
+      padding: 10px;
+    }
+
     .document-section .document-viewer {
-      height: 500px;
+      height: 70vh;
 
       .doc-iframe {
-        min-height: 500px;
+        min-height: 70vh;
       }
+    }
+
+    .audio-player {
+      width: 100%;
     }
   }
 }

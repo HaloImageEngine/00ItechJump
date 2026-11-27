@@ -1,3 +1,5 @@
+@use 'breakpoints' as bp;
+
 .nav {
   position: relative;
   display: flex;
@@ -14,9 +16,9 @@
   flex-direction: column;
   justify-content: center;
   gap: 4px;
-  width: 32px;
-  height: 32px;
-  padding: 0;
+  width: 44px;  /* 44px = minimum comfortable touch target */
+  height: 44px;
+  padding: 10px;
   border: none;
   background: transparent;
   cursor: pointer;
@@ -25,7 +27,7 @@
     display: block;
     height: 2px;
     width: 100%;
-    background-color: #1e3a5f;
+    background-color: #87ceeb; /* visible on the dark header */
     border-radius: 999px;
   }
 }
@@ -154,7 +156,7 @@
   display: none;
 }
 
-@media (max-width: 768px) {
+@include bp.mobile {
   .nav {
     z-index: 1500; /* Ensure nav is above backdrop */
   }
@@ -210,7 +212,7 @@
 }
 
 /* Responsive: show hamburger, stack menu on mobile */
-@media (max-width: 768px) {
+@include bp.mobile {
   .hamburger {
     display: flex;
   }
@@ -239,7 +241,7 @@
     &.open {
       opacity: 1;
       pointer-events: auto;
-      transform: translateY(0) translateX(80px);
+      transform: translateY(0);
     }
   }
 
@@ -279,5 +281,59 @@
     flex-direction: column;
     align-items: stretch;
     width: 100%;
+  }
+}
+
+/* Mobile: larger tap targets in the flyout menu */
+@include bp.mobile {
+  .nav {
+    margin-right: 0;
+  }
+
+  .nav-links {
+    padding-right: 12px;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
+
+  .nav-item a,
+  .nav-link.has-dropdown {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 14px;
+    font-size: 1rem;
+  }
+
+  .submenu li a,
+  .submenu li .submenu-btn {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Desktop: full-size nav buttons and dropdowns */
+@include bp.desktop {
+  .nav-links {
+    gap: 14px;
+    padding-right: 0;
+  }
+
+  .nav-item a,
+  .nav-link.has-dropdown {
+    padding: 9px 18px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 6px;
+  }
+
+  .submenu {
+    min-width: 220px;
+    padding: 8px 0;
+
+    li a,
+    li .submenu-btn {
+      padding: 9px 16px;
+      font-size: 0.95rem;
+    }
   }
 }

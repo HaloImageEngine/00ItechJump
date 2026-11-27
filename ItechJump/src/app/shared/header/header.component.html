@@ -5,6 +5,17 @@
       <app-brand-logo variant="wide" />
     </a>
 
+    <!-- Device indicator beside the logo: phone on Mobile, house on Desktop -->
+    @if (device.isMobile()) {
+      <span class="device-badge device-badge--mobile" title="Mobile view" aria-label="Mobile view">
+        <span class="material-icons" aria-hidden="true">smartphone</span>
+      </span>
+    } @else {
+      <span class="device-badge device-badge--desktop" title="Desktop view" aria-label="Desktop view">
+        <span class="material-icons" aria-hidden="true">home</span>
+      </span>
+    }
+
     <!-- Nav + user alias on the right -->
     <div class="header-right">
       <!-- Existing nav -->

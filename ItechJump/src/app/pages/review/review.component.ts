@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, signal } from '@angular/core';
+import { Component, OnInit, computed, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { MatTableModule } from '@angular/material/table';
@@ -9,6 +9,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { ItechjumpApiService } from '../../core/services/itechjump-api.service';
 import { AuthService } from '../../core/services/auth.service';
+import { DeviceService } from '../../core/services/device.service';
 
 interface TestResult {
   AnswerResponseId: number;
@@ -43,7 +44,14 @@ export class ReviewComponent implements OnInit {
   loading = signal(false);
   error = signal<string | null>(null);
 
-  displayedColumns: string[] = ['AnswerResponseId', 'QuestionShort', 'AnswerShort', 'Score', 'actions'];
+  private device = inject(DeviceService);
+
+  /** Desktop shows every column; Mobile keeps only what fits a phone screen. */
+  displayedColumns = computed<string[]>(() =>
+    this.device.isMobile()
+      ? ['QuestionShort', 'Score', 'actions']
+      : ['AnswerResponseId', 'QuestionShort', 'AnswerShort', 'Score', 'actions']
+  );
 
   ngOnInit(): void {
     this.loadTestResults();

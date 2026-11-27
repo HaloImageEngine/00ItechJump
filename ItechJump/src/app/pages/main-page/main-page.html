@@ -13,68 +13,82 @@
     {{ error() }}
   </div>
 
-  <!-- Category dropdown -->
-  <mat-form-field appearance="outline" class="full-width">
-    <mat-label>Category</mat-label>
-    <mat-select
-      [disabled]="loadingCategories()"
-      [value]="selectedCategory()"
-      (selectionChange)="onCategoryChange($event.value)">
-      <mat-option *ngFor="let c of categories()" [value]="c.Category">
-        {{ c.Category }} — {{ c.Description }}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+  <!-- Workspace: stacked on Mobile, two columns (question | answer) on Desktop -->
+  <div class="workspace">
+    <section class="ws-left" aria-label="Question">
+      <!-- Category dropdown -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Category</mat-label>
+        <mat-select
+          [disabled]="loadingCategories()"
+          [value]="selectedCategory()"
+          (selectionChange)="onCategoryChange($event.value)">
+          <mat-option *ngFor="let c of categories()" [value]="c.Category">
+            {{ c.Category }} — {{ c.Description }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-  <!-- Questions dropdown -->
-  <mat-form-field
-    *ngIf="selectedCategory()"
-    appearance="outline"
-    class="full-width">
-    <mat-label>Questions</mat-label>
-    <mat-select
-      [disabled]="loadingQuestions() || !questions().length"
-      [value]="selectedQuestionId()"
-      (selectionChange)="onSelectQuestion($event.value)">
-      <mat-option *ngFor="let q of questions()" [value]="q.ID">
-        {{ getQuestionPreview(q) }}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+      <!-- Questions dropdown -->
+      <mat-form-field
+        *ngIf="selectedCategory()"
+        appearance="outline"
+        class="full-width">
+        <mat-label>Questions</mat-label>
+        <mat-select
+          [disabled]="loadingQuestions() || !questions().length"
+          [value]="selectedQuestionId()"
+          (selectionChange)="onSelectQuestion($event.value)">
+          <mat-option *ngFor="let q of questions()" [value]="q.ID">
+            {{ getQuestionPreview(q) }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-  <!-- Full question textbox -->
-  <mat-form-field
-    *ngIf="selectedQuestion()"
-    appearance="outline"
-    class="full-width">
-    <mat-label>Full Question</mat-label>
-    <textarea
-      matInput
-      [value]="selectedQuestion()?.Question"
-      rows="5"
-      readonly>
-    </textarea>
-  </mat-form-field>
+      <!-- Full question textbox -->
+      <mat-form-field
+        *ngIf="selectedQuestion()"
+        appearance="outline"
+        class="full-width">
+        <mat-label>Full Question</mat-label>
+        <textarea
+          matInput
+          [value]="selectedQuestion()?.Question"
+          rows="5"
+          readonly>
+        </textarea>
+      </mat-form-field>
 
-  <!-- Show Answer button -->
-  <div class="button-row" *ngIf="selectedQuestion()">
-    <button mat-raised-button class="show-answer-btn" (click)="onShowAnswer()">
-      Show Answer
-    </button>
+      <!-- Show Answer button -->
+      <div class="button-row" *ngIf="selectedQuestion()">
+        <button mat-raised-button class="show-answer-btn" (click)="onShowAnswer()">
+          Show Answer
+        </button>
+      </div>
+    </section>
+
+    <section class="ws-right" aria-label="Answer">
+      <!-- Answer textbox -->
+      <mat-form-field
+        *ngIf="selectedQuestion() && showAnswer()
+        "
+        appearance="outline"
+        class="full-width answer-box">
+        <mat-label>Model Answer</mat-label>
+        <textarea
+          matInput
+          [value]="selectedQuestion()?.Answer"
+          rows="10"
+          readonly>
+        </textarea>
+      </mat-form-field>
+
+      <!-- Desktop-only empty state for the answer column -->
+      <div *ngIf="!(selectedQuestion() && showAnswer())" class="ws-placeholder">
+        <span class="material-icons" aria-hidden="true">lightbulb</span>
+        <p *ngIf="!selectedQuestion()">Pick a question to get started.</p>
+        <p *ngIf="selectedQuestion()">Think through your answer, then click <strong>Show Answer</strong>.</p>
+      </div>
+    </section>
   </div>
-
-  <!-- Answer textbox -->
-  <mat-form-field
-    *ngIf="selectedQuestion() && showAnswer()
-    "
-    appearance="outline"
-    class="full-width answer-box">
-    <mat-label>Model Answer</mat-label>
-    <textarea
-      matInput
-      [value]="selectedQuestion()?.Answer"
-      rows="10"
-      readonly>
-    </textarea>
-  </mat-form-field>
 </div>

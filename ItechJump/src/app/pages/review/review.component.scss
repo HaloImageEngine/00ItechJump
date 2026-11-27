@@ -1,3 +1,5 @@
+@use 'breakpoints' as bp;
+
 .review-container {
   padding: 20px;
   max-width: 1400px;
@@ -120,5 +122,32 @@ button[mat-raised-button] {
     font-size: 18px;
     width: 18px;
     height: 18px;
+  }
+}
+
+@include bp.mobile {
+  .review-container {
+    padding: 8px;
+  }
+
+  .results-table {
+    th,
+    td {
+      padding: 10px 8px;
+    }
+  }
+
+  /* Icon-only Detail button on phones */
+  button[mat-raised-button] {
+    min-width: 0;
+    padding: 0 10px;
+    font-size: 0;
+
+    mat-icon {
+      margin-right: 0;
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+    }
   }
 }

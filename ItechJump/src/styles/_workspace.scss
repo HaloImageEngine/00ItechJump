@@ -1,0 +1,107 @@
+// Two-column "workspace" used by Main (Interview Simulator) and Search.
+//   Mobile : one stacked column (question, then answer). Empty-state panel hidden.
+//   Desktop: centered page, question column | answer column side by side.
+// Usage: include LAST in the component .scss so it wins over page defaults:
+//   @use 'workspace' as ws;
+//   ...page rules...
+//   @include ws.styles;
+@use 'breakpoints' as bp;
+
+@mixin styles {
+  .main-page {
+    .workspace {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .ws-left,
+    .ws-right {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .ws-placeholder {
+      display: none;
+    }
+  }
+
+  @include bp.desktop {
+    .main-page {
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 32px 40px 48px;
+      gap: 20px;
+
+      .page-hero {
+        margin-bottom: 8px;
+        padding-bottom: 16px;
+      }
+
+      .page-hero .page-title-label {
+        font-size: 2.25rem;
+      }
+
+      .page-subtitle {
+        font-size: 1.05rem;
+        opacity: 0.9;
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: minmax(360px, 5fr) 7fr;
+        gap: 32px;
+        align-items: start;
+      }
+
+      .ws-left {
+        gap: 16px;
+        padding: 24px;
+        background: #0b0f17;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+      }
+
+      .ws-right {
+        position: sticky;
+        top: 24px;
+      }
+
+      .answer-box textarea {
+        min-height: 440px;
+        max-height: 65vh;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .ws-placeholder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-height: 200px;
+        padding: 24px 24px;
+        text-align: center;
+        border: 2px dashed rgba(135, 206, 235, 0.35);
+        border-radius: 12px;
+        background: rgba(135, 206, 235, 0.04);
+
+        .material-icons {
+          font-size: 40px;
+          color: #87ceeb;
+          opacity: 0.8;
+        }
+
+        p {
+          margin: 0;
+          font-size: 0.95rem;
+          color: #cfd8e3 !important;
+        }
+      }
+    }
+  }
+}

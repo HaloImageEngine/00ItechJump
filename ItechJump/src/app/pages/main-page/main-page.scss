@@ -1,3 +1,6 @@
+@use 'breakpoints' as bp;
+@use 'workspace' as ws;
+
 .main-page {
   display: flex;
   flex-direction: column;
@@ -102,3 +105,16 @@
   color: #b71c1c;
   font-size: 0.85rem;
 }
+
+@include bp.mobile {
+  .main-page {
+    padding: 12px;
+  }
+
+  .show-answer-btn {
+    width: 100%;
+  }
+}
+
+// Mobile/Desktop workspace layout (keep last)
+@include ws.styles;

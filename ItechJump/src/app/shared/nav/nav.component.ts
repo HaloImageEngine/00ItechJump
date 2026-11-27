@@ -34,7 +34,7 @@ export class NavComponent {
   appVersion = environment.appVersion;
 
   navItems: NavItem[] = [
-    { label: 'Main', route: '/main', exact: true },
+    { label: 'Main', route: '/main-page', exact: true },
     { label: 'Search', route: '/search' },
     {
       label: 'Testing',
